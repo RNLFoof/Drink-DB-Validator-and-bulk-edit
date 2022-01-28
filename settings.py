@@ -1,5 +1,6 @@
 # Adds to the ingredient list for the purpose of having other shit in it.
 INGREDIENT_CATEGORIES = [
+    "Brandy",
     "Bitters",
     "Chartreuse",
     "Curacao Liqueur",
@@ -10,11 +11,14 @@ INGREDIENT_CATEGORIES = [
     "Soda",
     "Amaro",
     "Dry Gin",
+    "Cola",
     "London Dry Gin",
     "Syrup",
+    "Stout",
+    "Genever",
 ]
 
-# Partial string supstitutions.
+# Partial string substitutions.
 INGREDIENT_RELPACEMENTS = [
     # Accents are removed because it's way easier to remove them than to add them back
     ("à|ä", "a"),
@@ -23,7 +27,9 @@ INGREDIENT_RELPACEMENTS = [
     (r"\bCream de\b", "Creme de"),
     (r"\bTrader's Vic\b", "Trader Vic's"),
     (r"ies\b", "y"),
-    (r"\b('n'|&)\b", "and"),
+    (r"\b('n'|'N'|\&)\b", "and"),
+    (r"\bCordial\b", "Liqueur"),  # This will probably mess with some brand names but
+    (r"\bIce-Cream\b", "Ice Cream")
 ]
 
 # Used to convert less specific ingredient names to more specific ones, so that ingredients under different names are
@@ -34,7 +40,7 @@ INGREDIENT_ROUNDUP = [
     # ('Van Gogh Silhouette Liqueur', 'Vanilla Liqueur'),
     ("(Amaretto|Almond) Liq.*", "Amaretto Almond Liqueur"),
     ("99 Bananas.*", "99 Bananas Banana Liqueur"),
-    ("Bailey'?s( Irish Cream)?", "Bailey's Irish Cream Liqueur"),
+    ("Bailey'?s( Irish Cream)?|Bailey", "Bailey's Irish Cream Liqueur"),
     ("Galliano.*", "Galliano Vanilla Liqueur"),
     ("Grand Marnier.*", "Grand Marnier Liqueur"),
     ("Grenadine Sy.* Liq.*|.*or Grenadine Syrup", "Grenadine Syrup"),
@@ -72,14 +78,26 @@ INGREDIENT_ROUNDUP = [
     ('St-Germain|St. Germain', 'St. Germain Elderflower Liqueur'),
     ('Bols Pumpkin Smash', 'Bols Pumpkin Smash Pumpkin Spice Liqueur'), #  I think these two might be the same thing, and the name changed?
     ('Bols Pumpkin Spice', 'Bols Pumpkin Spice Pumpkin Spice Liqueur'),
+    ('Jack Daniels', 'Jack Daniels Whiskey'),
+    ('Jim Beam', 'Jim Beam Whiskey'),
+    ('Jameson Cold Brew', 'Jameson Cold Brew Coffee'),
+    ('Yukon Jack', 'Yukon Jack Honey Liqueur'),
+    ('Angostura', 'Angostura Bitters'),
+    ('Benedictine', 'Benedictine Herbal Liqueur'),
+    ("Sweet and Sour", 'Sweet and Sour Mix'),
+    ("Chambord", 'Chambord Raspberry Liqueur'),
+    ('Cherri-Suissee', 'Cheri-Suisse Swiss Chocolate Cherry Liqueur'),
 ]
 
 # If a match is found, then it can only be a variant of the second item, or one of its variants.
 VARIATION_MATCHES = [
-    (r"\b(Curacao Liqueur|Triple Sec|Grand Marnier)\b", "Orange Liqueur"),
+    (r"\b(Curacao Liqueur|Triple Sec|Grand Marnier|Cointreau)\b", "Orange Liqueur"),
     (r"\bAbsolut\b", "Vodka"),
     (r"\bBourbon\b", "Whiskey"),
     (r"\bCognac\b", "Brandy"),
+    (r"\bGinger Ale\b", "Soda"),
+    (r"\bCola\b", "Soda"),
+    (r"\bCorona\b", "Lager"),
     (r"\bCreme de\b", "Liqueur"),
     (r"\bIPA\b", "Beer"),
     (r"\bLager\b", "Beer"),
@@ -90,6 +108,14 @@ VARIATION_MATCHES = [
     (r"\bSchnapps\b", "Liqueur"),
     (r"\bScotch\b", "Whiskey"),
     (r"\bTequila\b", "Mezcal"),
+    (r"\bMountain Dew\b", "Soda"),
+    (r"\bDr\. Pepper\b", "Soda"),
+    (r"\bPepsi Cola\b", "Soda"),
+    (r"\bCoca-Cola\b", "Soda"),
+    (r"\bStout\b", "Beer"),
+    (r"\bGinger Beer\b", "Soda"),  # Is it really a soda? This just gets it out of beer which it just like. isn't
+    (r"\b(Chocolate|Caramel) Sauce\b", "Syrup"),
+    (r"\bEspresso\b", "Coffee"),
 ]
 
 # If any match, it, and all subitems, are alcoholic.
@@ -108,21 +134,33 @@ ALCOHOLIC_MATCHES = [
 FLAVORS = {
     "Agave": {},
     "Almond": {"alsoaccepts": ["Noyeux"]},
-    "Apple": {"alsoaccepts": ["Appel"]},
+    "Apple": {"alsoaccepts": ["Appel"], "exclude": ["Appleton"]},
+    "Apricot": {},
     "Banana": {"alsoaccepts": ["Banane"]},
+    "Berry": {},
     "Bitter": {},
     "Blackberry": {"alsoaccepts": ["Mure"]},
     "Blueberry": {},
+    "Cantaloupe": {},
+    "Kiwi": {},
+    "Coconut": {},
+    "Pecan": {},
+    "Pumpkin": {},
+    "Macadamia": {},
+    "Elderflower": {},
+    "Walnut": {},
     "Caramel": {},
-    "Cherry": {},
+    "Celery": {},
+    "Cherry": {"exclude": ["Cherry Tomato"]},
     "Chocolate": {},
+    "Cinnamon Bark": {},
+    "Cinnamon": {},
     "Coffee": {"alsoaccepts": ["Espresso"]},
+    "Cranberry": {},
     "Cucumber": {},
     "Eggnog": {},
     "Elderberry": {},
     "Fig": {},
-    "Cinnamon Bark": {},
-    "Cinnamon": {},
     "Ginger": {},
     "Grape": {},
     "Grapefruit": {},
@@ -130,29 +168,36 @@ FLAVORS = {
     "Honey": {},
     "Huckleberry": {},
     "Lavender": {},
-    "Lemon": {"alsoaccepts": ["Citron", "Citroen"]},
+    "Lemon": {"alsoaccepts": ["Citron", "Citroen"], "exclude": ["Lemon Hart"]},
     "Lime": {},
     "Mango": {},
     "Maple": {},
     "Marshmallow": {},
     "Melon": {},
+    "Mint": {"alsoaccepts": ["Menthe"]},
+    "Olive": {},
     "Orange Blossom": {},
     "Orange": {"alsoaccepts": ["Oranje"]},
+    "Passion Fruit": {},
     "Peach": {},
     "Peanut Butter": {},
     "Pear": {},
-    "Pepper": {},
+    "Pepper": {"alsoaccepts": ["Peppar"]},
     "Pickle": {},
+    "Blackcurrant": {"alsoaccepts": ["Black Currant", "Currant"]},
     "Pineapple": {},
     "Pistachio": {},
+    "Cirtus": {},
     "Plum": {},
-    "Mint": {"alsoaccepts": ["Menthe"]},
     "Prickly Pear": {},
     "Raspberry": {},
     "Root Beer": {},
     "Rose": {},
+    "Cacao": {},
     "Sour": {},
     "Strawberry": {"alsoaccepts": ["Fraise"]},
+    "Tangerine": {},
     "Toasted Marshmallow": {},
+    "Tomato": {},
     "Vanilla": {},
 }
