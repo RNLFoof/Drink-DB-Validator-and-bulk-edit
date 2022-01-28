@@ -22,7 +22,7 @@ def strtonum(s):
 
     raise Exception(f"Couldn't parse {s} as a number.")
 
-class Ingredient:
+class IngredientInCocktail:
     def __init__(self, high, low, unit, ingredient):
         self.high = high
         self.low = low
@@ -62,7 +62,7 @@ class Ingredient:
         ingredient = s
 
         # Return
-        return Ingredient(high, low, unit, ingredient)
+        return IngredientInCocktail(high, low, unit, ingredient)
 
     def getquantity(self):
         if self.low == self.high:
@@ -74,4 +74,44 @@ class Ingredient:
             "quantity": str(self.getquantity()),
             "unit": self.unit,
             "ingredient": self.ingredient
+        }
+
+class IngredientInAll():
+    def __init__(self, ingredient):
+        self.ingredient = ingredient
+        self.alcoholic = False
+        self.abv = 0
+        self.variantof = None
+        self.usecount = 0
+        self.variants = []
+        self.modifiable = True  # Set to false when it's a pre-determined category, allowing, for example, "Bitters" to be
+                                # changed to "Angostura Bitters" without getting rid of the Bitters category
+        self.flavored = False
+        self.blocksdownwardmovement = False  # Used if lowering to this point makes no sense, ex. Flavored Vodka
+
+
+    def __eq__(self, other):
+        if type(other) != type(self):
+            return False
+        return self.todict() == other.todict()
+
+    def getsubvariants(self, ingdict, buildup=None):
+        if not buildup:
+            buildup = set()
+        for variant in self.variants:
+            if variant not in buildup:
+                buildup.add(variant)
+                ingdict[variant].getsubvariants(ingdict, buildup=buildup)
+        return buildup
+
+    def todict(self):
+        return {
+            "strIngredient": self.ingredient,
+            "strAlcohol": self.alcoholic,
+            "strABV": self.abv,
+            "variantOf": self.variantof,
+            "useCount": self.usecount,
+            "variants": self.variants,
+            # "flavored": self.flavored, # The app doesn't use this and it can be removed
+            "blocksDownwardMovement": self.blocksdownwardmovement,
         }

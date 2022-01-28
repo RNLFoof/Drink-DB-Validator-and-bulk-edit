@@ -25,7 +25,7 @@ from datetime import datetime
 import re
 from ctypes import Structure, windll, c_uint, sizeof, byref
 
-from mf import Ingredient
+from mf import IngredientInCocktail
 
 if not os.path.exists('stinkydata.pickle'):
     # If modifying these scopes, delete the file token.pickle.
@@ -103,7 +103,7 @@ for row in values[1:]:
             #     "unit": "",
             #     "ingredient": blah.split(" ")[-1]
             # })
-            ing = Ingredient.createfromstring(blah)
+            ing = IngredientInCocktail.createfromstring(blah)
             d["instructions"] += f"\nAlso [[[{blah}]]] is listed as a Muddle/Egg/Other"
             currentings.append(ing.getdict())
 
