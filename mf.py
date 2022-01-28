@@ -86,9 +86,11 @@ class IngredientInAll():
         self.variants = []
         self.modifiable = True  # Set to false when it's a pre-determined category, allowing, for example, "Bitters" to be
                                 # changed to "Angostura Bitters" without getting rid of the Bitters category
-        self.flavored = False
         self.blocksdownwardmovement = False  # Used if lowering to this point makes no sense, ex. Flavored Vodka
 
+        # These fields are just for processing and don't get passed on.
+        self.flavored = False
+        self.flavors = []  # This was a set, but it caused issues detecting changes
 
     def __eq__(self, other):
         if type(other) != type(self):
@@ -112,6 +114,9 @@ class IngredientInAll():
             "variantOf": self.variantof,
             "useCount": self.usecount,
             "variants": self.variants,
-            # "flavored": self.flavored, # The app doesn't use this and it can be removed
             "blocksDownwardMovement": self.blocksdownwardmovement,
+
+            # These fields are just for processing and don't get used in the app, but can be enabled for testing.
+            # "flavored": self.flavored,
+            "flavors": self.flavors,
         }

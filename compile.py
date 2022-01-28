@@ -1,3 +1,5 @@
+import collections
+
 import requests
 import json, os, re, shutil, datetime
 from io import BytesIO
@@ -21,6 +23,18 @@ for categoryname in settings.INGREDIENT_CATEGORIES:
         toadd = IngredientInAll(categoryname)
         toadd.modifiable = False
         reting[categoryname] = toadd
+
+# Add defaults to settings.FLAVORS
+for flavorname, flavorinfo in settings.FLAVORS.items():
+    flavorinfo.setdefault("alsoaccepts", [])
+
+# Generate flavor mapping that also includes alsoaccepts
+wordtoflavormaps = []
+WordToFlavorMap = collections.namedtuple("WordToFlavorMap", ["word", "flavor"])
+for flavorname, flavorinfo in settings.FLAVORS.items():
+    for workingflavorname in [flavorname] + flavorinfo["alsoaccepts"]:
+        wordtoflavormaps.append(WordToFlavorMap(workingflavorname, flavorname))
+wordtoflavormaps.sort(key=lambda x: -len(x.word))  # Largest first
 
 def getshouldbe(s):
     shouldbe = s.strip().title()
@@ -212,13 +226,18 @@ while True:
                 reting[shouldbe].variants = l
 
         # Set flavors on individual ingredients
-        for ingname,inginfo in dict(reting).items():
-            for flavorname, flavorinfo in settings.FLAVORS.items():
-                if flavorname in ingname:
-                    inginfo.flavored = True
-                    break
-            else:
-                inginfo.flavored = False
+        for ingname, inginfo in dict(reting).items():
+            ingname = ingname.lower()
+            originalflavors = list(inginfo.flavors)  # So we can detect changes and print them
+            inginfo.flavors = []  # Reset flavors
+            for map in wordtoflavormaps:
+                if map.word.lower() in ingname:
+                    inginfo.flavors.append(map.flavor)
+                    ingname = ingname.replace(map.word.lower(), "")  # Prevent conflicts
+
+            inginfo.flavored = len(inginfo.flavors) != 0
+            if originalflavors != inginfo.flavors:
+                print(f"Changed {ingname}'s flavors from {originalflavors} to {inginfo.flavors}")
 
 
 
