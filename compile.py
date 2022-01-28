@@ -254,10 +254,17 @@ while True:
 # Once everything is set, mark as flavored or unflavored.
 # Categories require it if they contain both flavored and unflavored ingredients.
 # Assuming variants have the same flavors as their parents. Freaking hope they do lol
+# OI!!! There's no way to deal with two groups inside each other, I don't think. figure that out.
+
+# This used to use settings.INGREDIENT_CATEGORIES, but I think it makes more sense to use this:
+categories = []
+for ingname, inginfo in dict(reting).items():
+    if inginfo.variantof is None and inginfo.variants:
+        categories.append(ingname)
 
 # Init all categories with a set
 categoryhastheseflavoredvalues = {}
-for category in settings.INGREDIENT_CATEGORIES:
+for category in categories:
     categoryhastheseflavoredvalues[category] = set()
 
 # Go through all items and, if relevant, track their flavored status
@@ -266,7 +273,7 @@ for inginfo in dict(reting).values():
         categoryhastheseflavoredvalues[inginfo.variantof].add(inginfo.flavored)
 
 # Now that we know what needs splitting, generate them, and transfer the references.
-for categoryname in settings.INGREDIENT_CATEGORIES:
+for categoryname in categories:
     if len(categoryhastheseflavoredvalues[categoryname]) == 2:
         bothkeys = []
         for flavored in ["Unflavored", "Flavored"]:
