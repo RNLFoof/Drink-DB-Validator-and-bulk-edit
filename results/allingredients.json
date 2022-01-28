@@ -1,4 +1,17 @@
 {
+    "Brandy": {
+        "strIngredient": "Brandy",
+        "strAlcohol": false,
+        "strABV": 0,
+        "variantOf": null,
+        "useCount": 16,
+        "variants": [
+            "Unflavored Brandy",
+            "Flavored Brandy"
+        ],
+        "blocksDownwardMovement": true,
+        "flavors": []
+    },
     "Bitters": {
         "strIngredient": "Bitters",
         "strAlcohol": false,
@@ -31,10 +44,10 @@
         "variantOf": "Orange Liqueur",
         "useCount": 0,
         "variants": [
-            "Unflavored Curacao Liqueur",
-            "Flavored Curacao Liqueur"
+            "Orange Curacao Liqueur",
+            "Blue Curacao Liqueur"
         ],
-        "blocksDownwardMovement": true,
+        "blocksDownwardMovement": false,
         "flavors": []
     },
     "Juice": {
@@ -44,10 +57,33 @@
         "variantOf": null,
         "useCount": 0,
         "variants": [
-            "Unflavored Juice",
-            "Flavored Juice"
+            "Lemon Juice",
+            "Grapefruit Juice",
+            "Lime Juice",
+            "Orange Juice",
+            "Celery Juice",
+            "Pineapple Juice",
+            "Cantaloupe Juice",
+            "Watermelon Juice",
+            "Apple Juice",
+            "Cranberry Juice",
+            "Tomato Juice",
+            "Cherry Juice",
+            "Passion Fruit Juice",
+            "Grape Juice",
+            "Olive Juice",
+            "Cranberry Blueberry Juice",
+            "White Cranberry Peach Juice",
+            "White Cranberry Strawberry Juice",
+            "Tangerine Juice",
+            "Apple Passion Mango Juice",
+            "Apricot Juice",
+            "White Grape Strawberry Juice",
+            "Berry Juice",
+            "Raspberry Juice",
+            "Kiwi Strawberry Juice"
         ],
-        "blocksDownwardMovement": true,
+        "blocksDownwardMovement": false,
         "flavors": []
     },
     "Liqueur": {
@@ -80,10 +116,12 @@
         "variantOf": null,
         "useCount": 0,
         "variants": [
-            "Unflavored Nectar",
-            "Flavored Nectar"
+            "Agave Nectar",
+            "Peach Nectar",
+            "Mango Nectar",
+            "Apricot Nectar"
         ],
-        "blocksDownwardMovement": true,
+        "blocksDownwardMovement": false,
         "flavors": []
     },
     "Soda": {
@@ -129,6 +167,20 @@
         "blocksDownwardMovement": false,
         "flavors": []
     },
+    "Cola": {
+        "strIngredient": "Cola",
+        "strAlcohol": false,
+        "strABV": 0,
+        "variantOf": "Unflavored Soda",
+        "useCount": 0,
+        "variants": [
+            "Coca-Cola",
+            "Pepsi Cola",
+            "Cola Schnapps"
+        ],
+        "blocksDownwardMovement": false,
+        "flavors": []
+    },
     "London Dry Gin": {
         "strIngredient": "London Dry Gin",
         "strAlcohol": false,
@@ -156,6 +208,19 @@
         "blocksDownwardMovement": true,
         "flavors": []
     },
+    "Stout": {
+        "strIngredient": "Stout",
+        "strAlcohol": false,
+        "strABV": 0,
+        "variantOf": "Beer",
+        "useCount": 0,
+        "variants": [
+            "Mackeson Stout",
+            "Guinness Stout"
+        ],
+        "blocksDownwardMovement": false,
+        "flavors": []
+    },
     "Barbadillo Principe Amontillado Sherry": {
         "strIngredient": "Barbadillo Principe Amontillado Sherry",
         "strAlcohol": false,
@@ -170,7 +235,7 @@
         "strIngredient": "Dolin Blanc Vermouth",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Vermouth",
+        "variantOf": "Unflavored Vermouth",
         "useCount": 15,
         "variants": [
             "Dolin Blanc Vermouth (Earl Grey-Infused)",
@@ -190,15 +255,17 @@
         "blocksDownwardMovement": false,
         "flavors": []
     },
-    "Angostura": {
-        "strIngredient": "Angostura",
+    "Angostura Bitters": {
+        "strIngredient": "Angostura Bitters",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": null,
-        "useCount": 96,
+        "variantOf": "Bitters",
+        "useCount": 123,
         "variants": [],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Bitter"
+        ]
     },
     "Orange Bitters": {
         "strIngredient": "Orange Bitters",
@@ -272,7 +339,7 @@
         "strIngredient": "Lemon Juice",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Flavored Juice",
+        "variantOf": "Juice",
         "useCount": 185,
         "variants": [
             "Fresh Lemon Juice"
@@ -286,7 +353,7 @@
         "strIngredient": "Grapefruit Juice",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Flavored Juice",
+        "variantOf": "Juice",
         "useCount": 42,
         "variants": [
             "Ruby Grapefruit Juice",
@@ -344,7 +411,7 @@
         "strIngredient": "Rittenhouse 100 Rye",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Whiskey",
+        "variantOf": "Unflavored Whiskey",
         "useCount": 22,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -555,11 +622,11 @@
         "blocksDownwardMovement": false,
         "flavors": []
     },
-    "Benedictine": {
-        "strIngredient": "Benedictine",
+    "Benedictine Herbal Liqueur": {
+        "strIngredient": "Benedictine Herbal Liqueur",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": null,
+        "variantOf": "Unflavored Liqueur",
         "useCount": 23,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -611,7 +678,7 @@
         "strIngredient": "Charbay Vodka",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Vodka",
+        "variantOf": "Unflavored Vodka",
         "useCount": 2,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -643,7 +710,7 @@
         "strIngredient": "Carpano Antica Formula Vermouth (Coffee-Infused",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Vermouth",
+        "variantOf": "Flavored Vermouth",
         "useCount": 4,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -692,7 +759,9 @@
         "useCount": 16,
         "variants": [],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Cacao"
+        ]
     },
     "Bittercube Cherry Bark and Vanilla Bitters": {
         "strIngredient": "Bittercube Cherry Bark and Vanilla Bitters",
@@ -871,7 +940,7 @@
         "strIngredient": "Cruzan Black Strap Rum",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Rum",
+        "variantOf": "Unflavored Rum",
         "useCount": 5,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -903,7 +972,7 @@
         "strIngredient": "Lemon Hart 151 Rum",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Rum",
+        "variantOf": "Flavored Rum",
         "useCount": 5,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -915,7 +984,7 @@
         "strIngredient": "Pampero Aniversario Rum",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Rum",
+        "variantOf": "Unflavored Rum",
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -925,7 +994,7 @@
         "strIngredient": "Appleton Estate V/X Rum",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Rum",
+        "variantOf": "Flavored Rum",
         "useCount": 21,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -959,7 +1028,7 @@
         "strIngredient": "Scarlet Ibis Rum",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Rum",
+        "variantOf": "Unflavored Rum",
         "useCount": 14,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -1016,7 +1085,7 @@
         "strIngredient": "Lime Juice",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Flavored Juice",
+        "variantOf": "Juice",
         "useCount": 156,
         "variants": [
             "Rose's Lime Juice",
@@ -1031,7 +1100,7 @@
         "strIngredient": "Orange Juice",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Flavored Juice",
+        "variantOf": "Juice",
         "useCount": 110,
         "variants": [
             "Blood Orange Juice",
@@ -1057,7 +1126,7 @@
         "strIngredient": "Lillet Blanc",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Lillet",
+        "variantOf": "Unflavored Lillet",
         "useCount": 6,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -1129,7 +1198,7 @@
         "strIngredient": "Agave Nectar",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Flavored Nectar",
+        "variantOf": "Nectar",
         "useCount": 7,
         "variants": [
             "Tarragon and Agave Nectar Gastrique"
@@ -1190,11 +1259,13 @@
         "strIngredient": "St. Germain Elderflower Liqueur",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Unflavored Liqueur",
+        "variantOf": "Elderflower Liqueur",
         "useCount": 24,
         "variants": [],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Elderflower"
+        ]
     },
     "Amaro Nonino": {
         "strIngredient": "Amaro Nonino",
@@ -1294,7 +1365,7 @@
         "strIngredient": "High West Silver Oat Whiskey",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Whiskey",
+        "variantOf": "Unflavored Whiskey",
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -1330,7 +1401,7 @@
         "strIngredient": "Bianco Vermouth (Chamomile-Infused)",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Vermouth",
+        "variantOf": "Unflavored Vermouth",
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -1372,7 +1443,7 @@
         "strIngredient": "Bernheim Original Wheat Whiskey",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Whiskey",
+        "variantOf": "Unflavored Whiskey",
         "useCount": 2,
         "variants": [
             "Bernheim Original Wheat Whiskey (Lavender-Infused)"
@@ -1416,7 +1487,7 @@
         "strIngredient": "Smith & Cross Rum",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Rum",
+        "variantOf": "Unflavored Rum",
         "useCount": 9,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -1527,7 +1598,7 @@
         "strIngredient": "El Dorado 12-Year Rum",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Rum",
+        "variantOf": "Unflavored Rum",
         "useCount": 3,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -1579,7 +1650,7 @@
         "strIngredient": "Contratta Vermouth Bianco",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Vermouth",
+        "variantOf": "Unflavored Vermouth",
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -1771,7 +1842,7 @@
         "strIngredient": "Plantation Barbados 5-Year Rum",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Rum",
+        "variantOf": "Unflavored Rum",
         "useCount": 2,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -1833,7 +1904,7 @@
         "strIngredient": "Santa Teresa Rum",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Rum",
+        "variantOf": "Unflavored Rum",
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -1917,7 +1988,7 @@
         "strIngredient": "Old Overholt Rye",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Whiskey",
+        "variantOf": "Unflavored Whiskey",
         "useCount": 6,
         "variants": [
             "Old Overholt Rye (Chamomile-Infused)"
@@ -2029,7 +2100,7 @@
         "strIngredient": "Cognac",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Brandy",
+        "variantOf": "Unflavored Brandy",
         "useCount": 6,
         "variants": [
             "Pierre Ferrand Ambre Cognac",
@@ -2113,7 +2184,7 @@
         "strIngredient": "Alchemia Chocolate Vodka",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Vodka",
+        "variantOf": "Flavored Vodka",
         "useCount": 2,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -2125,7 +2196,7 @@
         "strIngredient": "Flor de Ca\u00f1a 7-Year Rum",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Rum",
+        "variantOf": "Unflavored Rum",
         "useCount": 3,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -2167,7 +2238,7 @@
         "strIngredient": "Santa Teresa 1796 Rum",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Rum",
+        "variantOf": "Unflavored Rum",
         "useCount": 6,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -2177,7 +2248,7 @@
         "strIngredient": "Heavy Cream",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Cream",
+        "variantOf": "Unflavored Cream",
         "useCount": 16,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -2207,11 +2278,13 @@
         "strIngredient": "Celery Juice",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Unflavored Juice",
+        "variantOf": "Juice",
         "useCount": 2,
         "variants": [],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Celery"
+        ]
     },
     "Of Kosher Salt": {
         "strIngredient": "Of Kosher Salt",
@@ -2316,13 +2389,15 @@
         "useCount": 2,
         "variants": [],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Pumpkin"
+        ]
     },
     "Pineapple Juice": {
         "strIngredient": "Pineapple Juice",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Flavored Juice",
+        "variantOf": "Juice",
         "useCount": 249,
         "variants": [
             "Orange Pineapple Juice"
@@ -2445,11 +2520,13 @@
         "strIngredient": "Cantaloupe Juice",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Unflavored Juice",
+        "variantOf": "Juice",
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Cantaloupe"
+        ]
     },
     "Bitter Truth Celery Bitters": {
         "strIngredient": "Bitter Truth Celery Bitters",
@@ -2460,7 +2537,8 @@
         "variants": [],
         "blocksDownwardMovement": false,
         "flavors": [
-            "Bitter"
+            "Bitter",
+            "Celery"
         ]
     },
     "Avu\u00e1 Amburana Cachaca": {
@@ -2631,7 +2709,9 @@
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Cacao"
+        ]
     },
     "Russell's Reserve 10-Year Bourbon": {
         "strIngredient": "Russell's Reserve 10-Year Bourbon",
@@ -2689,11 +2769,11 @@
         "blocksDownwardMovement": false,
         "flavors": []
     },
-    "Toby's Lime Cordial": {
-        "strIngredient": "Toby's Lime Cordial",
+    "Toby's Lime Liqueur": {
+        "strIngredient": "Toby's Lime Liqueur",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Lime",
+        "variantOf": "Flavored Liqueur",
         "useCount": 3,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -2715,7 +2795,7 @@
         "strIngredient": "Ron Del Barrilito 3-Star Rum",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Rum",
+        "variantOf": "Unflavored Rum",
         "useCount": 7,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -2725,7 +2805,7 @@
         "strIngredient": "Gosling's Black Seal Rum",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Rum",
+        "variantOf": "Unflavored Rum",
         "useCount": 8,
         "variants": [
             "Gosling's Black Seal Rum (Banana Chip-Infused)"
@@ -2737,7 +2817,7 @@
         "strIngredient": "El Dorado 3-Year Rum",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Rum",
+        "variantOf": "Unflavored Rum",
         "useCount": 4,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -2779,7 +2859,7 @@
         "strIngredient": "Matusalem Gran Reserva 15-Year Rum",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Rum",
+        "variantOf": "Unflavored Rum",
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -2799,7 +2879,7 @@
         "strIngredient": "Ca\u00f1a Brava Rum",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Rum",
+        "variantOf": "Unflavored Rum",
         "useCount": 3,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -2835,7 +2915,6 @@
         "useCount": 19,
         "variants": [
             "Fresh Kaffir Lime Leaves",
-            "Toby's Lime Cordial",
             "Small Fresh Kaffir Lime Leaf",
             "Lime Wedge",
             "Lime Wedges"
@@ -2911,11 +2990,11 @@
             "Orange"
         ]
     },
-    "Kumquat Cordial": {
-        "strIngredient": "Kumquat Cordial",
+    "Kumquat Liqueur": {
+        "strIngredient": "Kumquat Liqueur",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": null,
+        "variantOf": "Unflavored Liqueur",
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -2985,7 +3064,7 @@
         "strIngredient": "El Dorado 15-Year Rum",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Rum",
+        "variantOf": "Unflavored Rum",
         "useCount": 3,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -3029,7 +3108,7 @@
         "strIngredient": "El Dorado 151 Rum",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Rum",
+        "variantOf": "Unflavored Rum",
         "useCount": 4,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -3043,13 +3122,15 @@
         "useCount": 4,
         "variants": [],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Coconut"
+        ]
     },
     "Lemon Hart Original Rum": {
         "strIngredient": "Lemon Hart Original Rum",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Rum",
+        "variantOf": "Flavored Rum",
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -3095,7 +3176,7 @@
         "strIngredient": "Diplom\u00e1tico Reserva Exclusiva Rum",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Rum",
+        "variantOf": "Unflavored Rum",
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -3162,7 +3243,7 @@
         "strIngredient": "Watermelon Juice",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Flavored Juice",
+        "variantOf": "Juice",
         "useCount": 3,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -3184,7 +3265,7 @@
         "strIngredient": "Barbancourt 3-Star Rum",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Rum",
+        "variantOf": "Unflavored Rum",
         "useCount": 3,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -3214,7 +3295,7 @@
         "strIngredient": "Appleton Estate Reserve Rum",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Rum",
+        "variantOf": "Flavored Rum",
         "useCount": 3,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -3226,11 +3307,13 @@
         "strIngredient": "Passion Fruit Syrup",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Unflavored Syrup",
+        "variantOf": "Flavored Syrup",
         "useCount": 2,
         "variants": [],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Passion Fruit"
+        ]
     },
     "Orange Wedges": {
         "strIngredient": "Orange Wedges",
@@ -3280,11 +3363,13 @@
         "strIngredient": "Wild Turkey Rye (Dried Currant-Infused)",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Whiskey",
+        "variantOf": "Flavored Whiskey",
         "useCount": 4,
         "variants": [],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Blackcurrant"
+        ]
     },
     "Cumin Syrup": {
         "strIngredient": "Cumin Syrup",
@@ -3500,7 +3585,7 @@
         "strIngredient": "Apple Juice",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Flavored Juice",
+        "variantOf": "Juice",
         "useCount": 32,
         "variants": [
             "Fuji Apple Juice",
@@ -3598,7 +3683,9 @@
         "useCount": 2,
         "variants": [],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Coconut"
+        ]
     },
     "Bonal Gentiane-Quina": {
         "strIngredient": "Bonal Gentiane-Quina",
@@ -3618,7 +3705,9 @@
         "useCount": 4,
         "variants": [],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Apricot"
+        ]
     },
     "La Gitana Manzanilla Sherry": {
         "strIngredient": "La Gitana Manzanilla Sherry",
@@ -3695,7 +3784,8 @@
         "variants": [],
         "blocksDownwardMovement": false,
         "flavors": [
-            "Cucumber"
+            "Cucumber",
+            "Berry"
         ]
     },
     "Redbreast 12-Year Irish Whiskey": {
@@ -3722,7 +3812,7 @@
         "strIngredient": "Cruzan Single-Barrel Rum",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Rum",
+        "variantOf": "Unflavored Rum",
         "useCount": 3,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -3796,7 +3886,7 @@
         "strIngredient": "Orange Flower Water",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Water",
+        "variantOf": "Flavored Water",
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -3808,7 +3898,7 @@
         "strIngredient": "Templeton Rye",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Whiskey",
+        "variantOf": "Unflavored Whiskey",
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -3838,15 +3928,17 @@
             "Grape"
         ]
     },
-    "American Fruits Black Currant Cordial": {
-        "strIngredient": "American Fruits Black Currant Cordial",
+    "American Fruits Black Currant Liqueur": {
+        "strIngredient": "American Fruits Black Currant Liqueur",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": null,
+        "variantOf": "Flavored Liqueur",
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Blackcurrant"
+        ]
     },
     "Marie Brizard Apricot Liqueur": {
         "strIngredient": "Marie Brizard Apricot Liqueur",
@@ -3856,7 +3948,9 @@
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Apricot"
+        ]
     },
     "Massenez Creme de Mure Blackberry Liqueur": {
         "strIngredient": "Massenez Creme de Mure Blackberry Liqueur",
@@ -3885,11 +3979,13 @@
         "strIngredient": "Coconut Water",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Water",
+        "variantOf": "Flavored Water",
         "useCount": 2,
         "variants": [],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Coconut"
+        ]
     },
     "Doc's Hard Apple Cider": {
         "strIngredient": "Doc's Hard Apple Cider",
@@ -4005,7 +4101,9 @@
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Pumpkin"
+        ]
     },
     "Becherovka": {
         "strIngredient": "Becherovka",
@@ -4041,7 +4139,7 @@
         "strIngredient": "Dolin Rouge Vermouth",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Vermouth",
+        "variantOf": "Unflavored Vermouth",
         "useCount": 4,
         "variants": [
             "Dolin Rouge Vermouth (Ancho Chile-Infused)"
@@ -4065,7 +4163,7 @@
         "strIngredient": "Zacapa 23-Year Rum",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Rum",
+        "variantOf": "Unflavored Rum",
         "useCount": 4,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -4138,7 +4236,9 @@
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Cacao"
+        ]
     },
     "Red Bell Pepper Puree": {
         "strIngredient": "Red Bell Pepper Puree",
@@ -4183,7 +4283,8 @@
         "variants": [],
         "blocksDownwardMovement": false,
         "flavors": [
-            "Cherry"
+            "Cherry",
+            "Tomato"
         ]
     },
     "Small Pinch Kosher Salt": {
@@ -4200,7 +4301,7 @@
         "strIngredient": "Lillet Rouge",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Lillet",
+        "variantOf": "Unflavored Lillet",
         "useCount": 2,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -4224,13 +4325,15 @@
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Tangerine"
+        ]
     },
     "Yamazaki 12-Year Whiskey": {
         "strIngredient": "Yamazaki 12-Year Whiskey",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Whiskey",
+        "variantOf": "Unflavored Whiskey",
         "useCount": 3,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -4252,7 +4355,7 @@
         "strIngredient": "Sazerac 6-Year Rye",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Whiskey",
+        "variantOf": "Unflavored Whiskey",
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -4298,7 +4401,9 @@
         "useCount": 3,
         "variants": [],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Pecan"
+        ]
     },
     "Caol Ila 12-Year Scotch": {
         "strIngredient": "Caol Ila 12-Year Scotch",
@@ -4314,7 +4419,7 @@
         "strIngredient": "Russell's Reserve Rye",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Whiskey",
+        "variantOf": "Unflavored Whiskey",
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -4324,7 +4429,7 @@
         "strIngredient": "Dry Vermouth",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Vermouth",
+        "variantOf": "Unflavored Vermouth",
         "useCount": 28,
         "variants": [
             "Dolin Dry Vermouth"
@@ -4378,7 +4483,7 @@
         "strIngredient": "Honey Nut Cheerio-Infused Cream",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Cream",
+        "variantOf": "Flavored Cream",
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -4434,7 +4539,7 @@
         "strIngredient": "Angostura 5-Year Rum",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Rum",
+        "variantOf": "Unflavored Rum",
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -4514,7 +4619,7 @@
         "strIngredient": "Mackeson Stout",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": null,
+        "variantOf": "Stout",
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -4634,7 +4739,7 @@
         "strIngredient": "Rose Water",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Water",
+        "variantOf": "Flavored Water",
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -4646,7 +4751,7 @@
         "strIngredient": "El Dorado High-Strength 151 Rum",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Rum",
+        "variantOf": "Unflavored Rum",
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -4688,7 +4793,7 @@
         "strIngredient": "Lillet Rose",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Lillet",
+        "variantOf": "Flavored Lillet",
         "useCount": 1,
         "variants": [
             "Lillet Rose (Rose-Infused)"
@@ -4702,7 +4807,7 @@
         "strIngredient": "Mount Gay Eclipse Rum",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Rum",
+        "variantOf": "Unflavored Rum",
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -4712,7 +4817,7 @@
         "strIngredient": "Wild Turkey Rye 101",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Whiskey",
+        "variantOf": "Unflavored Whiskey",
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -4736,13 +4841,15 @@
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Apricot"
+        ]
     },
     "Rittenhouse Rye (Red Thai Chile-Infused)": {
         "strIngredient": "Rittenhouse Rye (Red Thai Chile-Infused)",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Whiskey",
+        "variantOf": "Unflavored Whiskey",
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -4800,7 +4907,7 @@
         "strAlcohol": false,
         "strABV": 0,
         "variantOf": "Irish Cream Liqueur",
-        "useCount": 28,
+        "useCount": 29,
         "variants": [],
         "blocksDownwardMovement": false,
         "flavors": []
@@ -4812,21 +4919,17 @@
         "variantOf": null,
         "useCount": 35,
         "variants": [
-            "Condensed Milk",
-            "Coconut Milk",
-            "Steamed Milk",
-            "Skim Milk",
-            "Nonfat Chocolate Milk",
-            "Non-Fat Milk"
+            "Unflavored Milk",
+            "Flavored Milk"
         ],
-        "blocksDownwardMovement": false,
+        "blocksDownwardMovement": true,
         "flavors": []
     },
     "Dark Rum": {
         "strIngredient": "Dark Rum",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Rum",
+        "variantOf": "Unflavored Rum",
         "useCount": 11,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -4836,7 +4939,7 @@
         "strIngredient": "Absolut Vodka",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Vodka",
+        "variantOf": "Unflavored Vodka",
         "useCount": 2,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -4846,7 +4949,7 @@
         "strIngredient": "Tonic Water",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Water",
+        "variantOf": "Unflavored Water",
         "useCount": 5,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -4856,7 +4959,7 @@
         "strIngredient": "151 Proof Rum",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Rum",
+        "variantOf": "Unflavored Rum",
         "useCount": 10,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -4900,13 +5003,15 @@
         "strIngredient": "Cranberry Juice",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Unflavored Juice",
+        "variantOf": "Juice",
         "useCount": 406,
         "variants": [
             "White Cranberry Juice"
         ],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Cranberry"
+        ]
     },
     "Vodka": {
         "strIngredient": "Vodka",
@@ -4915,33 +5020,10 @@
         "variantOf": null,
         "useCount": 57,
         "variants": [
-            "Charbay Vodka",
-            "Alchemia Chocolate Vodka",
-            "Absolut Vodka",
-            "Absolut Citron",
-            "Absolut Peppar",
-            "Peach Vodka",
-            "Absolut Kurant",
-            "Cranberry Vodka",
-            "Lime Vodka",
-            "Raspberry Vodka",
-            "Van Gogh Regular Vodka",
-            "Van Gogh Citroen Vodka",
-            "Van Gogh Mango Vodka",
-            "Van Gogh Dutch Chocolate Vodka",
-            "Van Gogh Coconut Vodka",
-            "Van Gogh Melon Vodka",
-            "Van Gogh Pineapple Vodka",
-            "Van Gogh Vanilla Vodka",
-            "Van Gogh Wild Appel Vodka",
-            "Van Gogh Oranje Vodka",
-            "Honey Pepper Vodka",
-            "Fig Vodka",
-            "Van Gogh Espresso Vodka",
-            "Van Gogh Appel Vodka",
-            "Van Gogh Citrus Vodka"
+            "Unflavored Vodka",
+            "Flavored Vodka"
         ],
-        "blocksDownwardMovement": false,
+        "blocksDownwardMovement": true,
         "flavors": []
     },
     "Pisang Ambon": {
@@ -4972,7 +5054,7 @@
         "strIngredient": "Peach Nectar",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Flavored Nectar",
+        "variantOf": "Nectar",
         "useCount": 26,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -4999,23 +5081,17 @@
         "variantOf": null,
         "useCount": 3,
         "variants": [
-            "Dolin Blanc Vermouth",
-            "Carpano Antica Formula Vermouth (Coffee-Infused",
-            "Bianco Vermouth (Chamomile-Infused)",
-            "Contratta Vermouth Bianco",
-            "Dolin Rouge Vermouth",
-            "Dry Vermouth",
-            "Sweet Vermouth",
-            "Rosso Vermouth"
+            "Unflavored Vermouth",
+            "Flavored Vermouth"
         ],
-        "blocksDownwardMovement": false,
+        "blocksDownwardMovement": true,
         "flavors": []
     },
     "Light Rum": {
         "strIngredient": "Light Rum",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Rum",
+        "variantOf": "Unflavored Rum",
         "useCount": 30,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -5057,7 +5133,7 @@
         "strIngredient": "Scotch",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Whiskey",
+        "variantOf": "Unflavored Whiskey",
         "useCount": 14,
         "variants": [
             "Springbank 10-Year Scotch",
@@ -5080,7 +5156,7 @@
         "strIngredient": "Sweet Vermouth",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Vermouth",
+        "variantOf": "Unflavored Vermouth",
         "useCount": 18,
         "variants": [
             "House Sweet Vermouth",
@@ -5107,20 +5183,22 @@
         "strIngredient": "Creme de Cacao",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Unflavored Liqueur",
+        "variantOf": "Flavored Liqueur",
         "useCount": 22,
         "variants": [
             "Dark Creme de Cacao",
             "White Creme de Cacao"
         ],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Cacao"
+        ]
     },
     "Light Cream": {
         "strIngredient": "Light Cream",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Cream",
+        "variantOf": "Unflavored Cream",
         "useCount": 13,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -5130,7 +5208,7 @@
         "strIngredient": "Blended Whiskey",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Whiskey",
+        "variantOf": "Unflavored Whiskey",
         "useCount": 6,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -5140,7 +5218,7 @@
         "strIngredient": "Bourbon",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Whiskey",
+        "variantOf": "Unflavored Whiskey",
         "useCount": 10,
         "variants": [
             "Elijah Craig 12-Year Bourbon",
@@ -5164,7 +5242,7 @@
         "strIngredient": "Blackberry Brandy",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Brandy",
+        "variantOf": "Flavored Brandy",
         "useCount": 3,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -5184,23 +5262,11 @@
             "Lemon"
         ]
     },
-    "Angostura Bitters": {
-        "strIngredient": "Angostura Bitters",
-        "strAlcohol": false,
-        "strABV": 0,
-        "variantOf": "Bitters",
-        "useCount": 27,
-        "variants": [],
-        "blocksDownwardMovement": false,
-        "flavors": [
-            "Bitter"
-        ]
-    },
     "Soda Water": {
         "strIngredient": "Soda Water",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Water",
+        "variantOf": "Unflavored Water",
         "useCount": 5,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -5225,6 +5291,7 @@
         "variants": [
             "Instant Coffee",
             "Ice Coffee",
+            "Jameson Cold Brew Coffee",
             "Espresso Coffee",
             "Espresso or Strong Brewed Coffee",
             "Coffee Frozen Yogurt"
@@ -5342,7 +5409,7 @@
         "strIngredient": "Rye Whiskey",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Whiskey",
+        "variantOf": "Unflavored Whiskey",
         "useCount": 2,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -5355,47 +5422,10 @@
         "variantOf": null,
         "useCount": 14,
         "variants": [
-            "Cruzan Black Strap Rum",
-            "Lemon Hart 151 Rum",
-            "Pampero Aniversario Rum",
-            "Appleton Estate V/X Rum",
-            "Scarlet Ibis Rum",
-            "Smith & Cross Rum",
-            "El Dorado 12-Year Rum",
-            "Plantation Barbados 5-Year Rum",
-            "Santa Teresa Rum",
-            "Flor de Ca\u00f1a 7-Year Rum",
-            "Santa Teresa 1796 Rum",
-            "Ron Del Barrilito 3-Star Rum",
-            "Gosling's Black Seal Rum",
-            "El Dorado 3-Year Rum",
-            "Matusalem Gran Reserva 15-Year Rum",
-            "Ca\u00f1a Brava Rum",
-            "El Dorado 15-Year Rum",
-            "El Dorado 151 Rum",
-            "Lemon Hart Original Rum",
-            "Diplom\u00e1tico Reserva Exclusiva Rum",
-            "Barbancourt 3-Star Rum",
-            "Appleton Estate Reserve Rum",
-            "Cruzan Single-Barrel Rum",
-            "Zacapa 23-Year Rum",
-            "Angostura 5-Year Rum",
-            "El Dorado High-Strength 151 Rum",
-            "Mount Gay Eclipse Rum",
-            "Dark Rum",
-            "151 Proof Rum",
-            "Light Rum",
-            "Spiced Rum",
-            "A\u00f1ejo Rum",
-            "Blackstrap Rum",
-            "White Rum",
-            "Malibu Rum",
-            "Gold Rum",
-            "Jamaican Rum",
-            "Aged Rum",
-            "Bacardi 151 Rum"
+            "Unflavored Rum",
+            "Flavored Rum"
         ],
-        "blocksDownwardMovement": false,
+        "blocksDownwardMovement": true,
         "flavors": []
     },
     "Prosecco": {
@@ -5414,7 +5444,7 @@
         "strIngredient": "Corona",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": null,
+        "variantOf": "Lager",
         "useCount": 2,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -5537,7 +5567,7 @@
         "strIngredient": "Mountain Dew",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": null,
+        "variantOf": "Unflavored Soda",
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -5557,11 +5587,13 @@
         "strIngredient": "Tomato Juice",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Unflavored Juice",
+        "variantOf": "Juice",
         "useCount": 7,
         "variants": [],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Tomato"
+        ]
     },
     "Worcestershire Sauce": {
         "strIngredient": "Worcestershire Sauce",
@@ -5619,26 +5651,6 @@
             "Cherry"
         ]
     },
-    "Brandy": {
-        "strIngredient": "Brandy",
-        "strAlcohol": false,
-        "strABV": 0,
-        "variantOf": null,
-        "useCount": 16,
-        "variants": [
-            "Cognac",
-            "Blackberry Brandy",
-            "Cherry Brandy",
-            "Pisco",
-            "Apricot Brandy",
-            "Peach Brandy",
-            "Apple Brandy",
-            "Coffee Brandy",
-            "Ginger Brandy"
-        ],
-        "blocksDownwardMovement": false,
-        "flavors": []
-    },
     "Cachaca": {
         "strIngredient": "Cachaca",
         "strAlcohol": false,
@@ -5655,7 +5667,7 @@
         "strIngredient": "Cherry Brandy",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Brandy",
+        "variantOf": "Flavored Brandy",
         "useCount": 4,
         "variants": [
             "Massenez Kirsch Vieux Cherry Brandy"
@@ -5669,7 +5681,7 @@
         "strIngredient": "Coca-Cola",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": null,
+        "variantOf": "Cola",
         "useCount": 8,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -5679,7 +5691,7 @@
         "strIngredient": "Spiced Rum",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Rum",
+        "variantOf": "Unflavored Rum",
         "useCount": 3,
         "variants": [
             "Panama Jack Spiced Rum"
@@ -5691,7 +5703,7 @@
         "strIngredient": "Ginger Ale",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Ginger",
+        "variantOf": "Flavored Soda",
         "useCount": 8,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -5715,7 +5727,7 @@
         "strIngredient": "A\u00f1ejo Rum",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Rum",
+        "variantOf": "Unflavored Rum",
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -5725,7 +5737,7 @@
         "strIngredient": "Blackstrap Rum",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Rum",
+        "variantOf": "Unflavored Rum",
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -5748,7 +5760,7 @@
         "strIngredient": "Carbonated Water",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Water",
+        "variantOf": "Unflavored Water",
         "useCount": 10,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -5761,18 +5773,10 @@
         "variantOf": null,
         "useCount": 17,
         "variants": [
-            "Orange Flower Water",
-            "Coconut Water",
-            "Rose Water",
-            "Tonic Water",
-            "Soda Water",
-            "Carbonated Water",
-            "Hot Water",
-            "Purified Water",
-            "Bottled Water",
-            "Cold Water"
+            "Unflavored Water",
+            "Flavored Water"
         ],
-        "blocksDownwardMovement": false,
+        "blocksDownwardMovement": true,
         "flavors": []
     },
     "Instant Coffee": {
@@ -5803,7 +5807,7 @@
         "strIngredient": "White Rum",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Rum",
+        "variantOf": "Unflavored Rum",
         "useCount": 3,
         "variants": [
             "Banks 5-Island White Rum",
@@ -5822,7 +5826,8 @@
         "variantOf": "Beer",
         "useCount": 3,
         "variants": [
-            "Full Sail Session Black Lager"
+            "Full Sail Session Black Lager",
+            "Corona"
         ],
         "blocksDownwardMovement": false,
         "flavors": []
@@ -5831,7 +5836,7 @@
         "strIngredient": "Absolut Citron",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Vodka",
+        "variantOf": "Flavored Vodka",
         "useCount": 2,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -5940,15 +5945,17 @@
         "blocksDownwardMovement": false,
         "flavors": []
     },
-    "Blackcurrant Cordial": {
-        "strIngredient": "Blackcurrant Cordial",
+    "Blackcurrant Liqueur": {
+        "strIngredient": "Blackcurrant Liqueur",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": null,
+        "variantOf": "Flavored Liqueur",
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Blackcurrant"
+        ]
     },
     "Fruit Punch": {
         "strIngredient": "Fruit Punch",
@@ -6013,7 +6020,9 @@
             "Olive Brine"
         ],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Olive"
+        ]
     },
     "Olive Brine": {
         "strIngredient": "Olive Brine",
@@ -6023,7 +6032,9 @@
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Olive"
+        ]
     },
     "Demerara Sugar": {
         "strIngredient": "Demerara Sugar",
@@ -6039,7 +6050,7 @@
         "strIngredient": "Pisco",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Brandy",
+        "variantOf": "Unflavored Brandy",
         "useCount": 2,
         "variants": [
             "Macchu Pisco",
@@ -6069,8 +6080,7 @@
         "variantOf": null,
         "useCount": 3,
         "variants": [
-            "Red Bell Pepper Puree",
-            "Dr. Pepper"
+            "Red Bell Pepper Puree"
         ],
         "blocksDownwardMovement": false,
         "flavors": [
@@ -6093,7 +6103,7 @@
         "strIngredient": "Ginger Beer",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Beer",
+        "variantOf": "Flavored Soda",
         "useCount": 2,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -6108,25 +6118,10 @@
         "variantOf": null,
         "useCount": 7,
         "variants": [
-            "Rittenhouse 100 Rye",
-            "High West Silver Oat Whiskey",
-            "Bernheim Original Wheat Whiskey",
-            "Old Overholt Rye",
-            "Wild Turkey Rye (Dried Currant-Infused)",
-            "Templeton Rye",
-            "Yamazaki 12-Year Whiskey",
-            "Sazerac 6-Year Rye",
-            "Russell's Reserve Rye",
-            "Wild Turkey Rye 101",
-            "Rittenhouse Rye (Red Thai Chile-Infused)",
-            "Scotch",
-            "Blended Whiskey",
-            "Bourbon",
-            "Rye Whiskey",
-            "Irish Whiskey",
-            "Tennessee Whiskey"
+            "Unflavored Whiskey",
+            "Flavored Whiskey"
         ],
-        "blocksDownwardMovement": false,
+        "blocksDownwardMovement": true,
         "flavors": []
     },
     "Hot Damn Cinnamon Schnapps Liqueur": {
@@ -6167,7 +6162,7 @@
         "strIngredient": "Whipping Cream",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Cream",
+        "variantOf": "Unflavored Cream",
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -6191,11 +6186,13 @@
         "strIngredient": "Apricot Brandy",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Brandy",
+        "variantOf": "Flavored Brandy",
         "useCount": 6,
         "variants": [],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Apricot"
+        ]
     },
     "Mezcal": {
         "strIngredient": "Mezcal",
@@ -6274,11 +6271,10 @@
         "variantOf": null,
         "useCount": 1,
         "variants": [
-            "Lillet Blanc",
-            "Lillet Rouge",
-            "Lillet Rose"
+            "Unflavored Lillet",
+            "Flavored Lillet"
         ],
-        "blocksDownwardMovement": false,
+        "blocksDownwardMovement": true,
         "flavors": []
     },
     "Orange Peel": {
@@ -6307,17 +6303,19 @@
         "strIngredient": "Absolut Peppar",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Vodka",
+        "variantOf": "Flavored Vodka",
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Pepper"
+        ]
     },
     "Dr. Pepper": {
         "strIngredient": "Dr. Pepper",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Pepper",
+        "variantOf": "Flavored Soda",
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -6332,10 +6330,10 @@
         "variantOf": null,
         "useCount": 4,
         "variants": [
+            "Stout",
             "Negra Modelo Beer",
             "Blanche de Bruzelles Beer",
-            "Lager",
-            "Ginger Beer"
+            "Lager"
         ],
         "blocksDownwardMovement": false,
         "flavors": []
@@ -6366,7 +6364,7 @@
         "strIngredient": "Peach Vodka",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Vodka",
+        "variantOf": "Flavored Vodka",
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -6424,7 +6422,7 @@
         "strIngredient": "Malibu Rum",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Rum",
+        "variantOf": "Unflavored Rum",
         "useCount": 8,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -6463,18 +6461,10 @@
         "variantOf": null,
         "useCount": 13,
         "variants": [
-            "Heavy Cream",
-            "Honey Nut Cheerio-Infused Cream",
-            "Light Cream",
-            "Whipping Cream",
-            "Whipped Cream",
-            "Vanilla Ice-Cream",
-            "Cream Of Coconut",
-            "Coconut Cream",
-            "Half and Half Cream",
-            "Vanilla Ice Cream"
+            "Unflavored Cream",
+            "Flavored Cream"
         ],
-        "blocksDownwardMovement": false,
+        "blocksDownwardMovement": true,
         "flavors": []
     },
     "Honey": {
@@ -6498,17 +6488,17 @@
         "variantOf": null,
         "useCount": 1,
         "variants": [
-            "Iced Tea",
-            "Turkish Apple Tea"
+            "Unflavored Tea",
+            "Flavored Tea"
         ],
-        "blocksDownwardMovement": false,
+        "blocksDownwardMovement": true,
         "flavors": []
     },
     "Irish Whiskey": {
         "strIngredient": "Irish Whiskey",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Whiskey",
+        "variantOf": "Unflavored Whiskey",
         "useCount": 5,
         "variants": [
             "Knappogue Castle 12-Year Irish Whiskey",
@@ -6533,7 +6523,7 @@
         "strIngredient": "Cherry Juice",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Flavored Juice",
+        "variantOf": "Juice",
         "useCount": 24,
         "variants": [
             "White Grape Cherry Juice"
@@ -6559,9 +6549,7 @@
         "strABV": 0,
         "variantOf": null,
         "useCount": 2,
-        "variants": [
-            "Ginger Ale"
-        ],
+        "variants": [],
         "blocksDownwardMovement": false,
         "flavors": [
             "Ginger"
@@ -6581,7 +6569,7 @@
         "strIngredient": "Condensed Milk",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Milk",
+        "variantOf": "Unflavored Milk",
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -6591,11 +6579,13 @@
         "strIngredient": "Coconut Syrup",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Unflavored Syrup",
+        "variantOf": "Flavored Syrup",
         "useCount": 11,
         "variants": [],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Coconut"
+        ]
     },
     "Chocolate Syrup": {
         "strIngredient": "Chocolate Syrup",
@@ -6615,7 +6605,7 @@
         "strIngredient": "Iced Tea",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Tea",
+        "variantOf": "Unflavored Tea",
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -6625,7 +6615,7 @@
         "strIngredient": "Peach Brandy",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Brandy",
+        "variantOf": "Flavored Brandy",
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -6637,7 +6627,7 @@
         "strIngredient": "Whipped Cream",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Cream",
+        "variantOf": "Unflavored Cream",
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -6647,7 +6637,7 @@
         "strIngredient": "Guinness Stout",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": null,
+        "variantOf": "Stout",
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -6687,11 +6677,11 @@
         "blocksDownwardMovement": false,
         "flavors": []
     },
-    "Jack Daniels": {
-        "strIngredient": "Jack Daniels",
+    "Jack Daniels Whiskey": {
+        "strIngredient": "Jack Daniels Whiskey",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": null,
+        "variantOf": "Unflavored Whiskey",
         "useCount": 3,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -6711,7 +6701,7 @@
         "strIngredient": "Apple Brandy",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Brandy",
+        "variantOf": "Flavored Brandy",
         "useCount": 1,
         "variants": [
             "Laird's Bonded Apple Brandy",
@@ -6726,7 +6716,7 @@
         "strIngredient": "Tennessee Whiskey",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Whiskey",
+        "variantOf": "Unflavored Whiskey",
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -6736,7 +6726,7 @@
         "strIngredient": "Absolut Kurant",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Vodka",
+        "variantOf": "Unflavored Vodka",
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -6746,7 +6736,7 @@
         "strIngredient": "Turkish Apple Tea",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Tea",
+        "variantOf": "Flavored Tea",
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -6758,11 +6748,13 @@
         "strIngredient": "Kiwi Liqueur",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Unflavored Liqueur",
+        "variantOf": "Flavored Liqueur",
         "useCount": 3,
         "variants": [],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Kiwi"
+        ]
     },
     "Bitter Lemon": {
         "strIngredient": "Bitter Lemon",
@@ -6781,11 +6773,13 @@
         "strIngredient": "Cranberry Vodka",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Vodka",
+        "variantOf": "Flavored Vodka",
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Cranberry"
+        ]
     },
     "Apfelkorn": {
         "strIngredient": "Apfelkorn",
@@ -6841,7 +6835,7 @@
         "strIngredient": "Pepsi Cola",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": null,
+        "variantOf": "Cola",
         "useCount": 2,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -6923,7 +6917,7 @@
         "strIngredient": "Vanilla Ice-Cream",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Cream",
+        "variantOf": "Flavored Cream",
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -6933,16 +6927,6 @@
     },
     "Oreo Cookie": {
         "strIngredient": "Oreo Cookie",
-        "strAlcohol": false,
-        "strABV": 0,
-        "variantOf": null,
-        "useCount": 1,
-        "variants": [],
-        "blocksDownwardMovement": false,
-        "flavors": []
-    },
-    "Bailey": {
-        "strIngredient": "Bailey",
         "strAlcohol": false,
         "strABV": 0,
         "variantOf": null,
@@ -6967,7 +6951,7 @@
         "strIngredient": "Orange Curacao Liqueur",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Flavored Curacao Liqueur",
+        "variantOf": "Curacao Liqueur",
         "useCount": 53,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -7013,13 +6997,15 @@
         "strIngredient": "Coconut Milk",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Milk",
+        "variantOf": "Flavored Milk",
         "useCount": 22,
         "variants": [
             "Sweetened Coconut Milk"
         ],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Coconut"
+        ]
     },
     "Cherry Liqueur": {
         "strIngredient": "Cherry Liqueur",
@@ -7051,17 +7037,19 @@
         "strIngredient": "Passion Fruit Juice",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Unflavored Juice",
+        "variantOf": "Juice",
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Passion Fruit"
+        ]
     },
     "Coffee Brandy": {
         "strIngredient": "Coffee Brandy",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Brandy",
+        "variantOf": "Flavored Brandy",
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -7073,7 +7061,7 @@
         "strIngredient": "Lime Vodka",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Vodka",
+        "variantOf": "Flavored Vodka",
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -7152,7 +7140,7 @@
         "strIngredient": "Raspberry Vodka",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Vodka",
+        "variantOf": "Flavored Vodka",
         "useCount": 1765,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -7192,11 +7180,11 @@
         "blocksDownwardMovement": false,
         "flavors": []
     },
-    "Jim Beam": {
-        "strIngredient": "Jim Beam",
+    "Jim Beam Whiskey": {
+        "strIngredient": "Jim Beam Whiskey",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": null,
+        "variantOf": "Unflavored Whiskey",
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -7260,21 +7248,25 @@
         "blocksDownwardMovement": false,
         "flavors": []
     },
-    "Elderflower Cordial": {
-        "strIngredient": "Elderflower Cordial",
+    "Elderflower Liqueur": {
+        "strIngredient": "Elderflower Liqueur",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": null,
+        "variantOf": "Flavored Liqueur",
         "useCount": 1,
-        "variants": [],
+        "variants": [
+            "St. Germain Elderflower Liqueur"
+        ],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Elderflower"
+        ]
     },
     "Rosso Vermouth": {
         "strIngredient": "Rosso Vermouth",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Vermouth",
+        "variantOf": "Unflavored Vermouth",
         "useCount": 1,
         "variants": [
             "Contratto Americano Rosso Vermouth"
@@ -7282,21 +7274,23 @@
         "blocksDownwardMovement": false,
         "flavors": []
     },
-    "Yukon Jack": {
-        "strIngredient": "Yukon Jack",
+    "Yukon Jack Honey Liqueur": {
+        "strIngredient": "Yukon Jack Honey Liqueur",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": null,
+        "variantOf": "Honey Liqueur",
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Honey"
+        ]
     },
     "Grape Juice": {
         "strIngredient": "Grape Juice",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Flavored Juice",
+        "variantOf": "Juice",
         "useCount": 1,
         "variants": [
             "Cranberry Grape Juice",
@@ -7314,11 +7308,13 @@
         "strIngredient": "Cream Of Coconut",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Cream",
+        "variantOf": "Flavored Cream",
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Coconut"
+        ]
     },
     "Peachtree Schnapps": {
         "strIngredient": "Peachtree Schnapps",
@@ -7336,7 +7332,7 @@
         "strIngredient": "Gold Rum",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Rum",
+        "variantOf": "Unflavored Rum",
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -7400,7 +7396,7 @@
         "strIngredient": "Jamaican Rum",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Rum",
+        "variantOf": "Unflavored Rum",
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -7416,15 +7412,17 @@
         "blocksDownwardMovement": false,
         "flavors": []
     },
-    "Jameson Cold Brew": {
-        "strIngredient": "Jameson Cold Brew",
+    "Jameson Cold Brew Coffee": {
+        "strIngredient": "Jameson Cold Brew Coffee",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": null,
+        "variantOf": "Coffee",
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Coffee"
+        ]
     },
     "Black Walnut Bitters": {
         "strIngredient": "Black Walnut Bitters",
@@ -7435,24 +7433,27 @@
         "variants": [],
         "blocksDownwardMovement": false,
         "flavors": [
-            "Bitter"
+            "Bitter",
+            "Walnut"
         ]
     },
     "Coconut Cream": {
         "strIngredient": "Coconut Cream",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Cream",
+        "variantOf": "Flavored Cream",
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Coconut"
+        ]
     },
     "Aged Rum": {
         "strIngredient": "Aged Rum",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Rum",
+        "variantOf": "Unflavored Rum",
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -7462,7 +7463,7 @@
         "strIngredient": "Van Gogh Regular Vodka",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Vodka",
+        "variantOf": "Unflavored Vodka",
         "useCount": 1347,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -7498,13 +7499,15 @@
         "useCount": 441,
         "variants": [],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Cranberry"
+        ]
     },
     "Van Gogh Citroen Vodka": {
         "strIngredient": "Van Gogh Citroen Vodka",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Vodka",
+        "variantOf": "Flavored Vodka",
         "useCount": 2152,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -7516,7 +7519,7 @@
         "strIngredient": "Van Gogh Mango Vodka",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Vodka",
+        "variantOf": "Flavored Vodka",
         "useCount": 1481,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -7528,7 +7531,7 @@
         "strIngredient": "Van Gogh Dutch Chocolate Vodka",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Vodka",
+        "variantOf": "Flavored Vodka",
         "useCount": 1831,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -7540,17 +7543,19 @@
         "strIngredient": "Van Gogh Coconut Vodka",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Vodka",
+        "variantOf": "Flavored Vodka",
         "useCount": 1590,
         "variants": [],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Coconut"
+        ]
     },
     "Van Gogh Melon Vodka": {
         "strIngredient": "Van Gogh Melon Vodka",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Vodka",
+        "variantOf": "Flavored Vodka",
         "useCount": 1565,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -7562,7 +7567,7 @@
         "strIngredient": "Van Gogh Pineapple Vodka",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Vodka",
+        "variantOf": "Flavored Vodka",
         "useCount": 2044,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -7574,7 +7579,7 @@
         "strIngredient": "Van Gogh Vanilla Vodka",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Vodka",
+        "variantOf": "Flavored Vodka",
         "useCount": 1947,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -7586,7 +7591,7 @@
         "strIngredient": "Van Gogh Wild Appel Vodka",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Vodka",
+        "variantOf": "Flavored Vodka",
         "useCount": 1766,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -7598,7 +7603,7 @@
         "strIngredient": "Van Gogh Oranje Vodka",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Vodka",
+        "variantOf": "Flavored Vodka",
         "useCount": 1746,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -7610,14 +7615,16 @@
         "strIngredient": "Apricot Liqueur",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Unflavored Liqueur",
+        "variantOf": "Flavored Liqueur",
         "useCount": 468,
         "variants": [
             "Rothman & Winter Apricot Liqueur",
             "Marie Brizard Apricot Liqueur"
         ],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Apricot"
+        ]
     },
     "Watermelon Liqueur": {
         "strIngredient": "Watermelon Liqueur",
@@ -7660,7 +7667,7 @@
         "strIngredient": "Half and Half Cream",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Cream",
+        "variantOf": "Unflavored Cream",
         "useCount": 600,
         "variants": [
             "Glass With Half and Half Cream"
@@ -7702,13 +7709,15 @@
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Cacao"
+        ]
     },
     "Honey Pepper Vodka": {
         "strIngredient": "Honey Pepper Vodka",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Vodka",
+        "variantOf": "Flavored Vodka",
         "useCount": 56,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -7747,13 +7756,15 @@
             "Dark Creme de Cacao Liqueur"
         ],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Cacao"
+        ]
     },
     "Fig Vodka": {
         "strIngredient": "Fig Vodka",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Vodka",
+        "variantOf": "Flavored Vodka",
         "useCount": 10,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -7789,13 +7800,15 @@
         "strIngredient": "Macadamia Nut Liqueur",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Unflavored Liqueur",
+        "variantOf": "Flavored Liqueur",
         "useCount": 182,
         "variants": [
             "Trader Vic's Macadamia Nut Liqueur"
         ],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Macadamia"
+        ]
     },
     "Sour Apple Liqueur": {
         "strIngredient": "Sour Apple Liqueur",
@@ -7826,17 +7839,19 @@
         "strIngredient": "Olive Juice",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Unflavored Juice",
+        "variantOf": "Juice",
         "useCount": 7,
         "variants": [],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Olive"
+        ]
     },
     "Blue Curacao Liqueur": {
         "strIngredient": "Blue Curacao Liqueur",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Unflavored Curacao Liqueur",
+        "variantOf": "Curacao Liqueur",
         "useCount": 108,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -7889,7 +7904,7 @@
         "strIngredient": "Hot Water",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Water",
+        "variantOf": "Unflavored Water",
         "useCount": 2,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -7951,13 +7966,15 @@
             "Marie Brizard White Creme de Cacao"
         ],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Cacao"
+        ]
     },
     "Vanilla Ice Cream": {
         "strIngredient": "Vanilla Ice Cream",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Cream",
+        "variantOf": "Flavored Cream",
         "useCount": 2,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -7994,7 +8011,7 @@
         "strIngredient": "Van Gogh Espresso Vodka",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Vodka",
+        "variantOf": "Flavored Vodka",
         "useCount": 755,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -8131,11 +8148,13 @@
         "strIngredient": "Pecan Liqueur",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Unflavored Liqueur",
+        "variantOf": "Flavored Liqueur",
         "useCount": 264,
         "variants": [],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Pecan"
+        ]
     },
     "Chambord Liqueur": {
         "strIngredient": "Chambord Liqueur",
@@ -8225,11 +8244,13 @@
         "strIngredient": "Pumpkin Liqueur",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Unflavored Liqueur",
+        "variantOf": "Flavored Liqueur",
         "useCount": 5,
         "variants": [],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Pumpkin"
+        ]
     },
     "Chocolate Raspberry Liqueur": {
         "strIngredient": "Chocolate Raspberry Liqueur",
@@ -8315,7 +8336,7 @@
         "strIngredient": "Bacardi 151 Rum",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Rum",
+        "variantOf": "Unflavored Rum",
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -8401,21 +8422,25 @@
         "strIngredient": "Tangerine Liqueur",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Unflavored Liqueur",
+        "variantOf": "Flavored Liqueur",
         "useCount": 126,
         "variants": [],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Tangerine"
+        ]
     },
     "Walnut Liqueur": {
         "strIngredient": "Walnut Liqueur",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Unflavored Liqueur",
+        "variantOf": "Flavored Liqueur",
         "useCount": 285,
         "variants": [],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Walnut"
+        ]
     },
     "Watermelon Schnapps": {
         "strIngredient": "Watermelon Schnapps",
@@ -8467,7 +8492,9 @@
         "useCount": 85,
         "variants": [],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Cacao"
+        ]
     },
     "Van Gogh Amsterdam Chocolate Liqueur": {
         "strIngredient": "Van Gogh Amsterdam Chocolate Liqueur",
@@ -8557,7 +8584,7 @@
         "strIngredient": "Ginger Brandy",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Brandy",
+        "variantOf": "Flavored Brandy",
         "useCount": 33,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -8586,6 +8613,7 @@
         "variants": [],
         "blocksDownwardMovement": false,
         "flavors": [
+            "Cranberry",
             "Apple"
         ]
     },
@@ -8593,11 +8621,13 @@
         "strIngredient": "Sloe Berry Liqueur",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Unflavored Liqueur",
+        "variantOf": "Flavored Liqueur",
         "useCount": 78,
         "variants": [],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Berry"
+        ]
     },
     "Honey Liqueur": {
         "strIngredient": "Honey Liqueur",
@@ -8605,7 +8635,9 @@
         "strABV": 0,
         "variantOf": "Flavored Liqueur",
         "useCount": 38,
-        "variants": [],
+        "variants": [
+            "Yukon Jack Honey Liqueur"
+        ],
         "blocksDownwardMovement": false,
         "flavors": [
             "Honey"
@@ -8628,12 +8660,13 @@
         "strIngredient": "Cranberry Blueberry Juice",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Flavored Juice",
+        "variantOf": "Juice",
         "useCount": 28,
         "variants": [],
         "blocksDownwardMovement": false,
         "flavors": [
-            "Blueberry"
+            "Blueberry",
+            "Cranberry"
         ]
     },
     "Cranberry Grape Juice": {
@@ -8645,6 +8678,7 @@
         "variants": [],
         "blocksDownwardMovement": false,
         "flavors": [
+            "Cranberry",
             "Grape"
         ]
     },
@@ -8652,11 +8686,12 @@
         "strIngredient": "White Cranberry Peach Juice",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Flavored Juice",
+        "variantOf": "Juice",
         "useCount": 25,
         "variants": [],
         "blocksDownwardMovement": false,
         "flavors": [
+            "Cranberry",
             "Peach"
         ]
     },
@@ -8669,6 +8704,7 @@
         "variants": [],
         "blocksDownwardMovement": false,
         "flavors": [
+            "Cranberry",
             "Raspberry"
         ]
     },
@@ -8676,26 +8712,29 @@
         "strIngredient": "White Cranberry Strawberry Juice",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Flavored Juice",
+        "variantOf": "Juice",
         "useCount": 33,
         "variants": [],
         "blocksDownwardMovement": false,
         "flavors": [
-            "Strawberry"
+            "Strawberry",
+            "Cranberry"
         ]
     },
     "Tangerine Juice": {
         "strIngredient": "Tangerine Juice",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Unflavored Juice",
+        "variantOf": "Juice",
         "useCount": 25,
         "variants": [
             "Orange Tangerine Juice",
             "Grapefruit Tangerine Juice"
         ],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Tangerine"
+        ]
     },
     "Amarula Cream Liqueur": {
         "strIngredient": "Amarula Cream Liqueur",
@@ -8793,19 +8832,21 @@
         "strIngredient": "Coconut Liqueur",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Unflavored Liqueur",
+        "variantOf": "Flavored Liqueur",
         "useCount": 25,
         "variants": [
             "Kalani Ron de Coco Coconut Liqueur"
         ],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Coconut"
+        ]
     },
     "Purified Water": {
         "strIngredient": "Purified Water",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Water",
+        "variantOf": "Unflavored Water",
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -8906,11 +8947,13 @@
         "strIngredient": "Macadamia Nut Syrup",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Unflavored Syrup",
+        "variantOf": "Flavored Syrup",
         "useCount": 8,
         "variants": [],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Macadamia"
+        ]
     },
     "French Vanilla Syrup": {
         "strIngredient": "French Vanilla Syrup",
@@ -8995,7 +9038,7 @@
         "strIngredient": "Steamed Milk",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Milk",
+        "variantOf": "Unflavored Milk",
         "useCount": 3,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -9005,7 +9048,7 @@
         "strIngredient": "Skim Milk",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Milk",
+        "variantOf": "Unflavored Milk",
         "useCount": 2,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -9092,7 +9135,7 @@
         "strIngredient": "Van Gogh Appel Vodka",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Vodka",
+        "variantOf": "Flavored Vodka",
         "useCount": 3,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -9263,7 +9306,7 @@
         "strIngredient": "Cola Schnapps",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Unflavored Liqueur",
+        "variantOf": "Cola",
         "useCount": 7,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -9340,7 +9383,7 @@
         "strIngredient": "Bottled Water",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Water",
+        "variantOf": "Unflavored Water",
         "useCount": 46,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -9366,7 +9409,9 @@
         "useCount": 15,
         "variants": [],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Macadamia"
+        ]
     },
     "Green Melon Liqueur": {
         "strIngredient": "Green Melon Liqueur",
@@ -9420,7 +9465,7 @@
         "strIngredient": "Cold Water",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Water",
+        "variantOf": "Unflavored Water",
         "useCount": 2,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -9521,11 +9566,13 @@
         "strIngredient": "Bols Pumpkin Smash Pumpkin Spice Liqueur",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Unflavored Liqueur",
+        "variantOf": "Flavored Liqueur",
         "useCount": 3,
         "variants": [],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Pumpkin"
+        ]
     },
     "Cherry Syrup": {
         "strIngredient": "Cherry Syrup",
@@ -9724,7 +9771,9 @@
         "useCount": 5,
         "variants": [],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Coconut"
+        ]
     },
     "Eggnog Syrup": {
         "strIngredient": "Eggnog Syrup",
@@ -9755,7 +9804,7 @@
         "strIngredient": "Mango Nectar",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Flavored Nectar",
+        "variantOf": "Nectar",
         "useCount": 25,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -9830,7 +9879,7 @@
         "strIngredient": "Caramel Sauce",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": null,
+        "variantOf": "Flavored Syrup",
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -9878,7 +9927,7 @@
         "strIngredient": "Nonfat Chocolate Milk",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Milk",
+        "variantOf": "Flavored Milk",
         "useCount": 1,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -9903,7 +9952,7 @@
         "strIngredient": "Chocolate Sauce",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": null,
+        "variantOf": "Flavored Syrup",
         "useCount": 3,
         "variants": [
             "White Chocolate Sauce"
@@ -9929,7 +9978,7 @@
         "strIngredient": "Non-Fat Milk",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Milk",
+        "variantOf": "Unflavored Milk",
         "useCount": 2,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -9939,17 +9988,19 @@
         "strIngredient": "Apricot Nectar",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Unflavored Nectar",
+        "variantOf": "Nectar",
         "useCount": 24,
         "variants": [],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Apricot"
+        ]
     },
     "Apple Passion Mango Juice": {
         "strIngredient": "Apple Passion Mango Juice",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Flavored Juice",
+        "variantOf": "Juice",
         "useCount": 24,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -9968,7 +10019,8 @@
         "blocksDownwardMovement": false,
         "flavors": [
             "Strawberry",
-            "Apple"
+            "Apple",
+            "Kiwi"
         ]
     },
     "Apple Grape Juice": {
@@ -10027,11 +10079,13 @@
         "strIngredient": "Apricot Juice",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Unflavored Juice",
+        "variantOf": "Juice",
         "useCount": 23,
         "variants": [],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Apricot"
+        ]
     },
     "White Grape Berry Juice": {
         "strIngredient": "White Grape Berry Juice",
@@ -10042,6 +10096,7 @@
         "variants": [],
         "blocksDownwardMovement": false,
         "flavors": [
+            "Berry",
             "Grape"
         ]
     },
@@ -10049,7 +10104,7 @@
         "strIngredient": "White Grape Strawberry Juice",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Flavored Juice",
+        "variantOf": "Juice",
         "useCount": 24,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -10125,14 +10180,16 @@
         "strIngredient": "Berry Juice",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Unflavored Juice",
+        "variantOf": "Juice",
         "useCount": 24,
         "variants": [
             "White Grape Berry Juice",
             "Cranberry Wild Berry Juice"
         ],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Berry"
+        ]
     },
     "Pink Grapefruit Juice": {
         "strIngredient": "Pink Grapefruit Juice",
@@ -10150,7 +10207,7 @@
         "strIngredient": "Raspberry Juice",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Flavored Juice",
+        "variantOf": "Juice",
         "useCount": 27,
         "variants": [
             "Cranberry Raspberry Juice"
@@ -10180,7 +10237,10 @@
         "useCount": 24,
         "variants": [],
         "blocksDownwardMovement": false,
-        "flavors": []
+        "flavors": [
+            "Cranberry",
+            "Berry"
+        ]
     },
     "Orange Tangerine Juice": {
         "strIngredient": "Orange Tangerine Juice",
@@ -10191,6 +10251,7 @@
         "variants": [],
         "blocksDownwardMovement": false,
         "flavors": [
+            "Tangerine",
             "Orange"
         ]
     },
@@ -10198,14 +10259,15 @@
         "strIngredient": "Kiwi Strawberry Juice",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Flavored Juice",
+        "variantOf": "Juice",
         "useCount": 23,
         "variants": [
             "Apple Kiwi Strawberry Juice"
         ],
         "blocksDownwardMovement": false,
         "flavors": [
-            "Strawberry"
+            "Strawberry",
+            "Kiwi"
         ]
     },
     "Grapefruit Tangerine Juice": {
@@ -10217,14 +10279,15 @@
         "variants": [],
         "blocksDownwardMovement": false,
         "flavors": [
-            "Grapefruit"
+            "Grapefruit",
+            "Tangerine"
         ]
     },
     "Van Gogh Citrus Vodka": {
         "strIngredient": "Van Gogh Citrus Vodka",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Vodka",
+        "variantOf": "Unflavored Vodka",
         "useCount": 82,
         "variants": [],
         "blocksDownwardMovement": false,
@@ -10242,73 +10305,33 @@
             "Lime"
         ]
     },
-    "Unflavored Curacao Liqueur": {
-        "strIngredient": "Unflavored Curacao Liqueur",
+    "Unflavored Brandy": {
+        "strIngredient": "Unflavored Brandy",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Curacao Liqueur",
+        "variantOf": "Brandy",
         "useCount": 0,
         "variants": [
-            "Blue Curacao Liqueur"
+            "Cognac",
+            "Pisco"
         ],
         "blocksDownwardMovement": false,
         "flavors": []
     },
-    "Flavored Curacao Liqueur": {
-        "strIngredient": "Flavored Curacao Liqueur",
+    "Flavored Brandy": {
+        "strIngredient": "Flavored Brandy",
         "strAlcohol": false,
         "strABV": 0,
-        "variantOf": "Curacao Liqueur",
+        "variantOf": "Brandy",
         "useCount": 0,
         "variants": [
-            "Orange Curacao Liqueur"
-        ],
-        "blocksDownwardMovement": true,
-        "flavors": []
-    },
-    "Unflavored Juice": {
-        "strIngredient": "Unflavored Juice",
-        "strAlcohol": false,
-        "strABV": 0,
-        "variantOf": "Juice",
-        "useCount": 0,
-        "variants": [
-            "Celery Juice",
-            "Cantaloupe Juice",
-            "Cranberry Juice",
-            "Tomato Juice",
-            "Passion Fruit Juice",
-            "Olive Juice",
-            "Tangerine Juice",
-            "Apricot Juice",
-            "Berry Juice"
-        ],
-        "blocksDownwardMovement": false,
-        "flavors": []
-    },
-    "Flavored Juice": {
-        "strIngredient": "Flavored Juice",
-        "strAlcohol": false,
-        "strABV": 0,
-        "variantOf": "Juice",
-        "useCount": 0,
-        "variants": [
-            "Lemon Juice",
-            "Grapefruit Juice",
-            "Lime Juice",
-            "Orange Juice",
-            "Pineapple Juice",
-            "Watermelon Juice",
-            "Apple Juice",
-            "Cherry Juice",
-            "Grape Juice",
-            "Cranberry Blueberry Juice",
-            "White Cranberry Peach Juice",
-            "White Cranberry Strawberry Juice",
-            "Apple Passion Mango Juice",
-            "White Grape Strawberry Juice",
-            "Raspberry Juice",
-            "Kiwi Strawberry Juice"
+            "Blackberry Brandy",
+            "Cherry Brandy",
+            "Apricot Brandy",
+            "Peach Brandy",
+            "Apple Brandy",
+            "Coffee Brandy",
+            "Ginger Brandy"
         ],
         "blocksDownwardMovement": true,
         "flavors": []
@@ -10320,9 +10343,10 @@
         "variantOf": "Liqueur",
         "useCount": 0,
         "variants": [
-            "St. Germain Elderflower Liqueur",
+            "Benedictine Herbal Liqueur",
             "Suze Saveur D'Autrefois Liqueur",
             "Creme de Cassis",
+            "Kumquat Liqueur",
             "Zirbenz Stone Pine Liqueur",
             "Kummel Liqueur",
             "Rothman & Winter Creme de Violette",
@@ -10330,25 +10354,17 @@
             "Zoco Pachar\u00e1n Navarro Liqueur",
             "Mandarine Napoleon Liqueur",
             "Maraschino Liqueur",
-            "Creme de Cacao",
             "Sambuca Liqueur",
             "Irish Cream Liqueur",
             "Jagermeister Liqueur",
             "Southern Comfort Liqueur",
-            "Kiwi Liqueur",
             "Butterscotch Schnapps",
-            "Apricot Liqueur",
             "Hazelnut Liqueur",
             "Anisette Liqueur",
-            "Macadamia Nut Liqueur",
             "Creme de Noyaux",
             "Van Gogh Tripe Sec 30 Liqueur",
             "Van Gogh Tripe Sec 80 Liqueur",
-            "Pecan Liqueur",
             "Chambord Liqueur",
-            "Pumpkin Liqueur",
-            "Tangerine Liqueur",
-            "Walnut Liqueur",
             "Black Haus Liqueur",
             "Drambuie Liqueur",
             "Frangelico Liqueur",
@@ -10356,17 +10372,13 @@
             "Licor 43 Liqueur",
             "Nassau Royale Liqueur",
             "Tuaca Liqueur",
-            "Sloe Berry Liqueur",
             "Amarula Cream Liqueur",
             "Butterscotch Creme Liqueur",
-            "Coconut Liqueur",
             "Kimmel Liqueur",
             "Starry Night Liqueur",
             "Frangelica Liqueur",
-            "Cola Schnapps",
             "Butterscotch Liqueur",
-            "Rhumple Minze Liqueur",
-            "Bols Pumpkin Smash Pumpkin Spice Liqueur"
+            "Rhumple Minze Liqueur"
         ],
         "blocksDownwardMovement": false,
         "flavors": []
@@ -10379,37 +10391,51 @@
         "useCount": 0,
         "variants": [
             "Combier Pamplemousse Rose Liqueur",
+            "Toby's Lime Liqueur",
             "Koval Rose Hip Liqueur",
             "Massenez Creme de Peche Peach Liqueur",
+            "American Fruits Black Currant Liqueur",
             "Strawberry Schnapps",
+            "Creme de Cacao",
             "Creme de Banane",
             "Peach Schnapps",
             "Creme de Mure",
             "Banana Liqueur",
             "Chocolate Liqueur",
+            "Blackcurrant Liqueur",
             "Coffee Liqueur",
             "Raspberry Liqueur",
+            "Kiwi Liqueur",
             "Cherry Liqueur",
+            "Elderflower Liqueur",
             "Peachtree Schnapps",
             "Amaretto Almond Liqueur",
+            "Apricot Liqueur",
             "Watermelon Liqueur",
             "Blackberry Schnapps",
             "Blueberry Liqueur",
             "Cinnamon Schnapps",
             "Mango Liqueur",
+            "Macadamia Nut Liqueur",
             "Pear Liqueur",
             "Creme de Menthe",
+            "Pecan Liqueur",
             "Cinnamon Liqueur",
             "Vanilla Liqueur",
+            "Pumpkin Liqueur",
             "Peppermint Schnapps",
             "Melon Liqueur",
             "Strawberry Liqueur",
+            "Tangerine Liqueur",
+            "Walnut Liqueur",
             "Watermelon Schnapps",
             "Van Gogh Applefest Liqueur",
+            "Sloe Berry Liqueur",
             "Honey Liqueur",
             "Chocolate Cream Liqueur",
             "Caramel Cream Liqueur",
             "Plum Schnapps",
+            "Coconut Liqueur",
             "Pineapple Liqueur",
             "Peppermint Liqueur",
             "Apple Liqueur",
@@ -10421,33 +10447,8 @@
             "Van Gogh Sour Appel Liqueur",
             "Vandermint Liqueur",
             "Creme de Almond",
-            "Key Lime Liqueur"
-        ],
-        "blocksDownwardMovement": true,
-        "flavors": []
-    },
-    "Unflavored Nectar": {
-        "strIngredient": "Unflavored Nectar",
-        "strAlcohol": false,
-        "strABV": 0,
-        "variantOf": "Nectar",
-        "useCount": 0,
-        "variants": [
-            "Apricot Nectar"
-        ],
-        "blocksDownwardMovement": false,
-        "flavors": []
-    },
-    "Flavored Nectar": {
-        "strIngredient": "Flavored Nectar",
-        "strAlcohol": false,
-        "strABV": 0,
-        "variantOf": "Nectar",
-        "useCount": 0,
-        "variants": [
-            "Agave Nectar",
-            "Peach Nectar",
-            "Mango Nectar"
+            "Key Lime Liqueur",
+            "Bols Pumpkin Smash Pumpkin Spice Liqueur"
         ],
         "blocksDownwardMovement": true,
         "flavors": []
@@ -10459,7 +10460,9 @@
         "variantOf": "Soda",
         "useCount": 0,
         "variants": [
-            "Club Soda"
+            "Cola",
+            "Club Soda",
+            "Mountain Dew"
         ],
         "blocksDownwardMovement": false,
         "flavors": []
@@ -10472,6 +10475,9 @@
         "useCount": 0,
         "variants": [
             "San Pellegrino Pompelmo Grapefruit Soda",
+            "Ginger Ale",
+            "Ginger Beer",
+            "Dr. Pepper",
             "Bitter Lemon",
             "Lemon-Lime Soda",
             "Grape Soda",
@@ -10492,16 +10498,13 @@
             "Demerara Syrup",
             "Simple Syrup",
             "Scarlet Glow Syrup",
-            "Passion Fruit Syrup",
             "Cumin Syrup",
             "Corn Syrup",
-            "Coconut Syrup",
             "Orgeat Syrup",
             "Grenadine Syrup",
             "Tiramisu Syrup",
             "Amaretto Syrup",
             "Hazelnut Syrup",
-            "Macadamia Nut Syrup",
             "Butterscotch Syrup",
             "English Toffee Syrup",
             "B52 Syrup",
@@ -10527,15 +10530,18 @@
             "Maple Syrup",
             "Braeburn Apple Syrup",
             "Banana Syrup",
+            "Passion Fruit Syrup",
             "Blueberry Syrup",
             "Agave Syrup",
             "Hibiscus Syrup",
             "Pineapple Syrup",
+            "Coconut Syrup",
             "Chocolate Syrup",
             "Honey Syrup",
             "Raspberry Syrup",
             "Caramel Syrup",
             "Strawberry Syrup",
+            "Macadamia Nut Syrup",
             "Ginger Spice Syrup",
             "Peanut Butter Syrup",
             "Peppermint Patty Syrup",
@@ -10554,7 +10560,329 @@
             "Chocolate Biscotti Syrup",
             "Vanilla Bean Syrup",
             "Peppermint Syrup",
-            "Mint Syrup"
+            "Mint Syrup",
+            "Caramel Sauce",
+            "Chocolate Sauce"
+        ],
+        "blocksDownwardMovement": true,
+        "flavors": []
+    },
+    "Unflavored Milk": {
+        "strIngredient": "Unflavored Milk",
+        "strAlcohol": false,
+        "strABV": 0,
+        "variantOf": "Milk",
+        "useCount": 0,
+        "variants": [
+            "Condensed Milk",
+            "Steamed Milk",
+            "Skim Milk",
+            "Non-Fat Milk"
+        ],
+        "blocksDownwardMovement": false,
+        "flavors": []
+    },
+    "Flavored Milk": {
+        "strIngredient": "Flavored Milk",
+        "strAlcohol": false,
+        "strABV": 0,
+        "variantOf": "Milk",
+        "useCount": 0,
+        "variants": [
+            "Coconut Milk",
+            "Nonfat Chocolate Milk"
+        ],
+        "blocksDownwardMovement": true,
+        "flavors": []
+    },
+    "Unflavored Vodka": {
+        "strIngredient": "Unflavored Vodka",
+        "strAlcohol": false,
+        "strABV": 0,
+        "variantOf": "Vodka",
+        "useCount": 0,
+        "variants": [
+            "Charbay Vodka",
+            "Absolut Vodka",
+            "Absolut Kurant",
+            "Van Gogh Regular Vodka",
+            "Van Gogh Citrus Vodka"
+        ],
+        "blocksDownwardMovement": false,
+        "flavors": []
+    },
+    "Flavored Vodka": {
+        "strIngredient": "Flavored Vodka",
+        "strAlcohol": false,
+        "strABV": 0,
+        "variantOf": "Vodka",
+        "useCount": 0,
+        "variants": [
+            "Alchemia Chocolate Vodka",
+            "Absolut Citron",
+            "Absolut Peppar",
+            "Peach Vodka",
+            "Cranberry Vodka",
+            "Lime Vodka",
+            "Raspberry Vodka",
+            "Van Gogh Citroen Vodka",
+            "Van Gogh Mango Vodka",
+            "Van Gogh Dutch Chocolate Vodka",
+            "Van Gogh Coconut Vodka",
+            "Van Gogh Melon Vodka",
+            "Van Gogh Pineapple Vodka",
+            "Van Gogh Vanilla Vodka",
+            "Van Gogh Wild Appel Vodka",
+            "Van Gogh Oranje Vodka",
+            "Honey Pepper Vodka",
+            "Fig Vodka",
+            "Van Gogh Espresso Vodka",
+            "Van Gogh Appel Vodka"
+        ],
+        "blocksDownwardMovement": true,
+        "flavors": []
+    },
+    "Unflavored Vermouth": {
+        "strIngredient": "Unflavored Vermouth",
+        "strAlcohol": false,
+        "strABV": 0,
+        "variantOf": "Vermouth",
+        "useCount": 0,
+        "variants": [
+            "Dolin Blanc Vermouth",
+            "Bianco Vermouth (Chamomile-Infused)",
+            "Contratta Vermouth Bianco",
+            "Dolin Rouge Vermouth",
+            "Dry Vermouth",
+            "Sweet Vermouth",
+            "Rosso Vermouth"
+        ],
+        "blocksDownwardMovement": false,
+        "flavors": []
+    },
+    "Flavored Vermouth": {
+        "strIngredient": "Flavored Vermouth",
+        "strAlcohol": false,
+        "strABV": 0,
+        "variantOf": "Vermouth",
+        "useCount": 0,
+        "variants": [
+            "Carpano Antica Formula Vermouth (Coffee-Infused"
+        ],
+        "blocksDownwardMovement": true,
+        "flavors": []
+    },
+    "Unflavored Rum": {
+        "strIngredient": "Unflavored Rum",
+        "strAlcohol": false,
+        "strABV": 0,
+        "variantOf": "Rum",
+        "useCount": 0,
+        "variants": [
+            "Cruzan Black Strap Rum",
+            "Pampero Aniversario Rum",
+            "Scarlet Ibis Rum",
+            "Smith & Cross Rum",
+            "El Dorado 12-Year Rum",
+            "Plantation Barbados 5-Year Rum",
+            "Santa Teresa Rum",
+            "Flor de Ca\u00f1a 7-Year Rum",
+            "Santa Teresa 1796 Rum",
+            "Ron Del Barrilito 3-Star Rum",
+            "Gosling's Black Seal Rum",
+            "El Dorado 3-Year Rum",
+            "Matusalem Gran Reserva 15-Year Rum",
+            "Ca\u00f1a Brava Rum",
+            "El Dorado 15-Year Rum",
+            "El Dorado 151 Rum",
+            "Diplom\u00e1tico Reserva Exclusiva Rum",
+            "Barbancourt 3-Star Rum",
+            "Cruzan Single-Barrel Rum",
+            "Zacapa 23-Year Rum",
+            "Angostura 5-Year Rum",
+            "El Dorado High-Strength 151 Rum",
+            "Mount Gay Eclipse Rum",
+            "Dark Rum",
+            "151 Proof Rum",
+            "Light Rum",
+            "Spiced Rum",
+            "A\u00f1ejo Rum",
+            "Blackstrap Rum",
+            "White Rum",
+            "Malibu Rum",
+            "Gold Rum",
+            "Jamaican Rum",
+            "Aged Rum",
+            "Bacardi 151 Rum"
+        ],
+        "blocksDownwardMovement": false,
+        "flavors": []
+    },
+    "Flavored Rum": {
+        "strIngredient": "Flavored Rum",
+        "strAlcohol": false,
+        "strABV": 0,
+        "variantOf": "Rum",
+        "useCount": 0,
+        "variants": [
+            "Lemon Hart 151 Rum",
+            "Appleton Estate V/X Rum",
+            "Lemon Hart Original Rum",
+            "Appleton Estate Reserve Rum"
+        ],
+        "blocksDownwardMovement": true,
+        "flavors": []
+    },
+    "Unflavored Water": {
+        "strIngredient": "Unflavored Water",
+        "strAlcohol": false,
+        "strABV": 0,
+        "variantOf": "Water",
+        "useCount": 0,
+        "variants": [
+            "Tonic Water",
+            "Soda Water",
+            "Carbonated Water",
+            "Hot Water",
+            "Purified Water",
+            "Bottled Water",
+            "Cold Water"
+        ],
+        "blocksDownwardMovement": false,
+        "flavors": []
+    },
+    "Flavored Water": {
+        "strIngredient": "Flavored Water",
+        "strAlcohol": false,
+        "strABV": 0,
+        "variantOf": "Water",
+        "useCount": 0,
+        "variants": [
+            "Orange Flower Water",
+            "Coconut Water",
+            "Rose Water"
+        ],
+        "blocksDownwardMovement": true,
+        "flavors": []
+    },
+    "Unflavored Whiskey": {
+        "strIngredient": "Unflavored Whiskey",
+        "strAlcohol": false,
+        "strABV": 0,
+        "variantOf": "Whiskey",
+        "useCount": 0,
+        "variants": [
+            "Rittenhouse 100 Rye",
+            "High West Silver Oat Whiskey",
+            "Bernheim Original Wheat Whiskey",
+            "Old Overholt Rye",
+            "Templeton Rye",
+            "Yamazaki 12-Year Whiskey",
+            "Sazerac 6-Year Rye",
+            "Russell's Reserve Rye",
+            "Wild Turkey Rye 101",
+            "Rittenhouse Rye (Red Thai Chile-Infused)",
+            "Scotch",
+            "Blended Whiskey",
+            "Bourbon",
+            "Rye Whiskey",
+            "Irish Whiskey",
+            "Jack Daniels Whiskey",
+            "Tennessee Whiskey",
+            "Jim Beam Whiskey"
+        ],
+        "blocksDownwardMovement": false,
+        "flavors": []
+    },
+    "Flavored Whiskey": {
+        "strIngredient": "Flavored Whiskey",
+        "strAlcohol": false,
+        "strABV": 0,
+        "variantOf": "Whiskey",
+        "useCount": 0,
+        "variants": [
+            "Wild Turkey Rye (Dried Currant-Infused)"
+        ],
+        "blocksDownwardMovement": true,
+        "flavors": []
+    },
+    "Unflavored Lillet": {
+        "strIngredient": "Unflavored Lillet",
+        "strAlcohol": false,
+        "strABV": 0,
+        "variantOf": "Lillet",
+        "useCount": 0,
+        "variants": [
+            "Lillet Blanc",
+            "Lillet Rouge"
+        ],
+        "blocksDownwardMovement": false,
+        "flavors": []
+    },
+    "Flavored Lillet": {
+        "strIngredient": "Flavored Lillet",
+        "strAlcohol": false,
+        "strABV": 0,
+        "variantOf": "Lillet",
+        "useCount": 0,
+        "variants": [
+            "Lillet Rose"
+        ],
+        "blocksDownwardMovement": true,
+        "flavors": []
+    },
+    "Unflavored Cream": {
+        "strIngredient": "Unflavored Cream",
+        "strAlcohol": false,
+        "strABV": 0,
+        "variantOf": "Cream",
+        "useCount": 0,
+        "variants": [
+            "Heavy Cream",
+            "Light Cream",
+            "Whipping Cream",
+            "Whipped Cream",
+            "Half and Half Cream"
+        ],
+        "blocksDownwardMovement": false,
+        "flavors": []
+    },
+    "Flavored Cream": {
+        "strIngredient": "Flavored Cream",
+        "strAlcohol": false,
+        "strABV": 0,
+        "variantOf": "Cream",
+        "useCount": 0,
+        "variants": [
+            "Honey Nut Cheerio-Infused Cream",
+            "Vanilla Ice-Cream",
+            "Cream Of Coconut",
+            "Coconut Cream",
+            "Vanilla Ice Cream"
+        ],
+        "blocksDownwardMovement": true,
+        "flavors": []
+    },
+    "Unflavored Tea": {
+        "strIngredient": "Unflavored Tea",
+        "strAlcohol": false,
+        "strABV": 0,
+        "variantOf": "Tea",
+        "useCount": 0,
+        "variants": [
+            "Iced Tea"
+        ],
+        "blocksDownwardMovement": false,
+        "flavors": []
+    },
+    "Flavored Tea": {
+        "strIngredient": "Flavored Tea",
+        "strAlcohol": false,
+        "strABV": 0,
+        "variantOf": "Tea",
+        "useCount": 0,
+        "variants": [
+            "Turkish Apple Tea"
         ],
         "blocksDownwardMovement": true,
         "flavors": []
