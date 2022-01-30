@@ -16,6 +16,9 @@ for x in os.listdir("sources"):
     retcock += json.load(open(os.path.join("sources", x), "rb"))
 reting = {} #json.load(open(ingpath, "rb"))
 
+# This is used to filter out what information is shown. You know for debugging. It's regex.
+monitor = r"Bitters"
+
 # Add ingredient categories
 for categoryname in settings.INGREDIENT_CATEGORIES:
     #for y in ["", "Unflavored "] + [f"{z} " for z in settings.FLAVORS.keys()]:
@@ -61,9 +64,6 @@ def getshouldbe(s):
             if re.fullmatch(regex, shouldbe):
                 shouldbe = new
 
-        if shouldbe.startswith("Creme de") and shouldbe.endswith(" Liqueur"):
-            shouldbe = shouldbe.replace(" Liqueur", "")
-
         shouldbe = shouldbe.strip()
 
         vangoghless = shouldbe.replace("Van Gogh Silhouette ", "")
@@ -74,6 +74,9 @@ def getshouldbe(s):
 
         if rem == shouldbe:
             return shouldbe
+
+def amimonitoring(this):
+    return re.search(monitor, this, re.IGNORECASE) is not None
 
 # old = json.load(open("allcocktailsold.json", "rb"))
 images = os.listdir("images")
@@ -137,19 +140,23 @@ while True:
         for x in retcock:
             for y in x["ingredients"]:
                 if y["ingredient"] not in reting and y["ingredient"] not in fuck:
-                    print(y["ingredient"], "DOESN'T FUCKING EXISWT")
+                    if amimonitoring(y["ingredient"]):
+                        print(y["ingredient"], "DOESN'T FUCKING EXISWT")
                     reting[y["ingredient"]] = IngredientInAll(y["ingredient"])
 
         # Set default variants
         taken = set()
         otheringssorted = sorted(reting.keys(), key=lambda x: -len(x))
-        for k,i in dict(reting).items():
+        for k, i in dict(reting).items():
             # What can be searched?
             # If a match is found, then it can only be a variant of the second item, or one of its variants.
             forcedvariantof = None
             for regex, forcedvariantofmaybe in settings.VARIATION_MATCHES:
                 if re.search(regex, k):
                     forcedvariantof = forcedvariantofmaybe
+                    forcedvariationregex = regex  # For printing
+                    if amimonitoring(k):
+                        print(f"{k} is going to be a variant of {otheritem} or one of its variants, because it matched {forcedvariationregex}")
                     break
             if forcedvariantof:
                 otheringssorted = reting[forcedvariantof].getsubvariants(reting)
@@ -162,7 +169,8 @@ while True:
             for otheritem in otheringssorted:
                 if otheritem != k and otheritem in k and re.search(fr"\b{re.escape(otheritem)}$", k, flags=re.IGNORECASE):
                     if i.variantof != otheritem:
-                        print(f"Set {k} to a be a variant of {otheritem}")
+                        if amimonitoring(k) or amimonitoring(otheritem):
+                            print(rf"Set {k} to a be a variant of {otheritem} because it matched \b{re.escape(otheritem)}$")
                     i.variantof = otheritem
                     break
             # Looking for matches anywhere
@@ -170,14 +178,16 @@ while True:
                 for otheritem in otheringssorted:
                     if otheritem != k and otheritem in k and re.search(fr"\b{re.escape(otheritem)}\b", k, flags=re.IGNORECASE):
                         if i.variantof != otheritem:
-                            print(f"Set {k} to a be a variant of {otheritem}")
+                            if amimonitoring(k) or amimonitoring(otheritem):
+                                print(fr"Set {k} to a be a variant of {otheritem} because it matched \b{re.escape(otheritem)}\b")
                         i.variantof = otheritem
                         break
                 else:
                     # If nothing else is found, and there was a forced variant, use that
                     if forcedvariantof:
                         if i.variantof != forcedvariantof:
-                            print(f"Set {k} to a be a variant of {forcedvariantof}")
+                            if amimonitoring(k) or amimonitoring(forcedvariantof):
+                                print(f"Set {k} to a be a variant of {forcedvariantof} because nothing else was found and it matched {forcedvariationregex}")
                         i.variantof = forcedvariantof
 
         # Apply normalization
@@ -188,15 +198,17 @@ while True:
             try:
                 shouldbe = getshouldbe(k)
                 if shouldbe in taken:
-                    print(f"Dupe of {shouldbe}")
+                    if amimonitoring(shouldbe):
+                        print(f"Dupe of {shouldbe}")
                 taken.add(shouldbe)
                 if k != shouldbe:
-                    print(f"'{k}' should be '{shouldbe}'")
+                    if amimonitoring(shouldbe):
+                        print(f"'{k}' should be '{shouldbe}'")
 
-                    for x in retcock:
-                        for y in x["ingredients"]:
-                            if y["ingredient"] == k:
-                                print(f"{y['ingredient']} = {shouldbe}")
+                        for x in retcock:
+                            for y in x["ingredients"]:
+                                if y["ingredient"] == k:
+                                    print(f"{y['ingredient']} = {shouldbe}")
 
                     reting.setdefault(shouldbe, i)
                     del reting[k]
@@ -206,7 +218,8 @@ while True:
                                 y["ingredient"] = shouldbe
 
                 if shouldbe != i.ingredient:
-                    print(f"Internal external mismatch in {shouldbe}")
+                    if amimonitoring(shouldbe):
+                        print(f"Internal external mismatch in {shouldbe}")
                     i.ingredient = shouldbe
 
             except Exception as e:
@@ -215,18 +228,20 @@ while True:
                 raise e
 
         # Variants
-        for k,i in dict(reting).items():
-            shouldbe = getshouldbe(k)
+        # For each ingredient(i1), collect every other ingredient(i2) that has i1 as its variantof.
+        for settingingname, settinginginfo in dict(reting).items():
             l = []
-            for k,i in reting.items():
-                if i.variantof == shouldbe:
-                    l.append(k)
-            if l != reting[shouldbe].variants:
-                print(f"Setting {shouldbe}'s variants to {l}")
-                reting[shouldbe].variants = l
+            for scanningingname, scanninginginfo in reting.items():
+                if scanninginginfo.variantof == settingingname:
+                    l.append(scanningingname)
+            if l != settinginginfo.variants:
+                if amimonitoring(settingingname):
+                    print(f"Setting {settingingname}'s variants to {l}")
+                settinginginfo.variants = l
 
         # Set flavors on individual ingredients
         for ingname, inginfo in dict(reting).items():
+            originalingname = ingname  # Just for printing
             ingname = ingname.lower()
             originalflavors = list(inginfo.flavors)  # So we can detect changes and print them
             inginfo.flavors = []  # Reset flavors
@@ -235,9 +250,17 @@ while True:
                     inginfo.flavors.append(map.flavor)
                     ingname = ingname.replace(map.word.lower(), "")  # Prevent conflicts
 
+            # Flavored if it has flavors
             inginfo.flavored = len(inginfo.flavors) != 0
+            # Flavored if the entire category is flavored
+            if not inginfo.flavored and inginfo.variantof in settings.FLAVORED_INGREDIENT_CATEGORIES:
+                if amimonitoring(originalingname):
+                    print(originalingname, "has been forced to be flavored by the settings.")
+                inginfo.flavored = True
+            # Show changes
             if originalflavors != inginfo.flavors:
-                print(f"Changed {ingname}'s flavors from {originalflavors} to {inginfo.flavors}")
+                if amimonitoring(ingname):
+                    print(f"Changed {ingname}'s flavors from {originalflavors} to {inginfo.flavors}")
 
 
 
@@ -292,6 +315,13 @@ for categoryname in categories:
             reting[ingredient.variantof].variants.append(ingredientname)  # Layer 2 up
         reting[categoryname].variants = bothkeys  # Layer 1 up
         reting[categoryname].blocksdownwardmovement = True
+    # Also, if there's only 1, and they're all flavored, block it off
+    elif len(categoryhastheseflavoredvalues[categoryname]) == 1 and\
+         list(categoryhastheseflavoredvalues[categoryname])[0]:  # Flavored?
+        reting[categoryname].blocksdownwardmovement = True
+        if amimonitoring(categoryname):
+           print(categoryname, "blocked off")
+
 
 # Count
 for k,i in dict(reting).items():
