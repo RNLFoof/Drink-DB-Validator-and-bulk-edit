@@ -17,7 +17,7 @@ for x in os.listdir("sources"):
 reting = {} #json.load(open(ingpath, "rb"))
 
 # This is used to filter out what information is shown. You know for debugging. It's regex.
-monitor = r"Bitters"
+monitor = r"Espresso Vodka"
 
 # Add ingredient categories
 for categoryname in settings.INGREDIENT_CATEGORIES:
@@ -75,8 +75,48 @@ def getshouldbe(s):
         if rem == shouldbe:
             return shouldbe
 
+
 def amimonitoring(this):
+    if this is None:  # Oops, didn't think of that.
+        return False
     return re.search(monitor, this, re.IGNORECASE) is not None
+
+
+def layeredmatching(victim, possibilities):
+    # I'm thinking, right? Maybe this would be better as only ends most of the time. When do you ever want to match the
+    # front? Amaro, I guess? and like, nothing else?
+
+    # Get only possibilities with any hope
+    hopefulpossibilities = filter(lambda x: x.lower() in victim.lower(), possibilities)
+
+    # Filter by largest first to avoid conflicts
+    hopefulpossibilities = sorted(hopefulpossibilities, key=lambda x: -len(x))
+
+    # Looking for exact matches
+    for otheritem in hopefulpossibilities:
+        if otheritem.lower() == victim.lower():
+            break
+    else:
+        # Looking for matches at the the end
+        for otheritem in hopefulpossibilities:
+            if otheritem in victim and re.search(fr"\b{re.escape(otheritem)}$", victim, flags=re.IGNORECASE):
+                break
+        else:
+            # Looking for matches at the start
+            for otheritem in hopefulpossibilities:
+                if otheritem in victim and re.search(fr"^{re.escape(otheritem)}\b", victim, flags=re.IGNORECASE):
+                    break
+            # Looking for matches anywhere
+            else:
+                for otheritem in hopefulpossibilities:
+                    if otheritem in victim and re.search(fr"\b{re.escape(otheritem)}\b", victim, flags=re.IGNORECASE):
+                        break
+                else:
+                    return None
+    return otheritem
+    # if amimonitoring(victim) or amimonitoring(otheritem):
+    #     print(
+    #         fr"Set {victim} to a be a variant of {otheritem} because it matched \b{re.escape(otheritem)}\b")
 
 # old = json.load(open("allcocktailsold.json", "rb"))
 images = os.listdir("images")
@@ -150,45 +190,40 @@ while True:
         for k, i in dict(reting).items():
             # What can be searched?
             # If a match is found, then it can only be a variant of the second item, or one of its variants.
-            forcedvariantof = None
-            for regex, forcedvariantofmaybe in settings.VARIATION_MATCHES:
-                if re.search(regex, k):
-                    forcedvariantof = forcedvariantofmaybe
-                    forcedvariationregex = regex  # For printing
-                    if amimonitoring(k):
-                        print(f"{k} is going to be a variant of {otheritem} or one of its variants, because it matched {forcedvariationregex}")
-                    break
+            # forcedvariantof = None
+            # for regex, forcedvariantofmaybe in settings.VARIATION_MATCHES:
+            #     if re.search(regex, k):
+            #         forcedvariantof = forcedvariantofmaybe
+            #         forcedvariationregex = regex  # For printing
+            #         if amimonitoring(k):
+            #             print(f"{k} is going to be a variant of {forcedvariantofmaybe} or one of its variants, because it matched {forcedvariationregex}")
+            #         break
+            forcedvariantof = layeredmatching(k, [x[0] for x in settings.VARIATION_MATCHES])
+            if forcedvariantof is not None:
+                forcedvariantof = filter(lambda x: x[0] == forcedvariantof, settings.VARIATION_MATCHES)[0][1]
+
+            # If a forced variant is found, get all possible subingredients. Otherwise, just get everything.
             if forcedvariantof:
-                otheringssorted = reting[forcedvariantof].getsubvariants(reting)
+                otherings = reting[forcedvariantof].getsubvariants(reting)
             else:
-                otheringssorted = reting.keys()
-            otheringssorted = sorted(otheringssorted, key=lambda x: -len(x))
+                otherings = reting.keys()
+            otherings = list(otherings)  # otherwise it's a dict_keys
+
+            # Is itself in there? kick it out! It can't be a variant of itself!
+            if k in otherings:
+                otherings.remove(k)
 
             # Actually figure it out
-            # Looking for matches at the start
-            for otheritem in otheringssorted:
-                if otheritem != k and otheritem in k and re.search(fr"\b{re.escape(otheritem)}$", k, flags=re.IGNORECASE):
-                    if i.variantof != otheritem:
-                        if amimonitoring(k) or amimonitoring(otheritem):
-                            print(rf"Set {k} to a be a variant of {otheritem} because it matched \b{re.escape(otheritem)}$")
-                    i.variantof = otheritem
-                    break
-            # Looking for matches anywhere
-            else:
-                for otheritem in otheringssorted:
-                    if otheritem != k and otheritem in k and re.search(fr"\b{re.escape(otheritem)}\b", k, flags=re.IGNORECASE):
-                        if i.variantof != otheritem:
-                            if amimonitoring(k) or amimonitoring(otheritem):
-                                print(fr"Set {k} to a be a variant of {otheritem} because it matched \b{re.escape(otheritem)}\b")
-                        i.variantof = otheritem
-                        break
-                else:
-                    # If nothing else is found, and there was a forced variant, use that
-                    if forcedvariantof:
-                        if i.variantof != forcedvariantof:
-                            if amimonitoring(k) or amimonitoring(forcedvariantof):
-                                print(f"Set {k} to a be a variant of {forcedvariantof} because nothing else was found and it matched {forcedvariationregex}")
-                        i.variantof = forcedvariantof
+            yournewdaddy = layeredmatching(k, otherings)
+            originalvariantof = i.variantof  # For printing
+            if yournewdaddy is None:  # Didn't find anything? use the forced variant maybe
+                if forcedvariantof:
+                    i.variantof = forcedvariantof
+            else:  # Found something
+                i.variantof = yournewdaddy
+            # Display results maybe
+            if originalvariantof != i.variantof and (amimonitoring(k) or amimonitoring(yournewdaddy)):
+                print(rf"Set {k} to a be a variant of {i.variantof}.")
 
         # Apply normalization
         for k,i in dict(reting).items():
