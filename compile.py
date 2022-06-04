@@ -1,24 +1,217 @@
 import collections
 
 import requests
-import json, os, re, shutil, datetime
+import json, os, re, shutil
 from io import BytesIO
 from PIL import Image
 import copy
 import time
 from mf import *
 import settings
+from unidecode import unidecode
+from datetime import datetime
+
+import web
+import progress
 
 cockpath = r"S:\Code\AndroidProjects\Impotent-Bartender\app\src\main\res\raw\allcocktails.json"
 ingpath = r"S:\Code\AndroidProjects\Impotent-Bartender\app\src\main\res\raw\allingredients.json"
 retcock = []
 for x in os.listdir("sources"):
     retcock += json.load(open(os.path.join("sources", x), "rb"))
-reting = {} #json.load(open(ingpath, "rb"))
+reting = {}
+previouslyprinted = set()
+step = 0
+steps = 2
 
 # This is used to filter out what information is shown. You know for debugging. It's regex.
 monitor = r"Espresso Vodka"
 
+class PossibleAttribute:
+    def __init__(self, wikipedia):
+        self.name = wikipedia.name
+        if wikipedia.openingsentence:
+            self.aka = list(re.findall(r"<b>\s*(.+?)\s*</b>", wikipedia.openingsentence))
+        else:
+            self.aka = []
+        self.related = []
+
+    def __str__(self):
+        return f"{self.name} ({', '.join(self.aka)})"
+
+    def appliesto(self, string):
+        """Returns true or false based on if an ingredient with the provided name would have this attribute."""
+        for testme in [self.name]+self.aka:
+            if re.search(fr"\b{re.escape(testme)}\b", string, re.IGNORECASE):
+                return True
+        return False
+
+possibleattreibutes = set()
+didthislinkalready = set()
+def generatepossibleattributesfrom(link, distance=0):
+    """Also returns the search structure."""
+    searchstructure = {}
+    maxdistance = 0
+
+    # Don't repeat
+    if link in didthislinkalready:
+        return
+    didthislinkalready.add(link)
+    # Don't go too far
+    if distance > maxdistance:
+        return
+    #
+    wikipedia = web.Wikipedia(link)
+    # Gather links
+    aas = set()
+    for table in list(re.finditer(r"<table.*?>((?:.|\n)*?)</table>", wikipedia.html))[1:]:  # The first table is a table of contents
+        for a in re.finditer(r'<a.*?href="/wiki/(.*?)".*?>(.*?)</a>', table.group()):
+            aas.add(a)
+    # for seealso in list(re.finditer(r">See also</span>(.|\n)*?>References</span>", html)):
+    #     for a in re.finditer(r'<a.*?href="/wiki/(.*?)".*?>(.*?)</a>', seealso.group()):
+    #         aas.add(a)
+    for li in list(re.finditer(r"<li>.*></li>", wikipedia.html)):
+        for a in re.finditer(r'<a.*?href="/wiki/(.*?)".*?>(.*?)</a>', li.group()):
+            aas.add(a)
+    # Use links
+    for a in aas:
+        if "Template_talk" in a.group():
+            continue
+        if "List_of_" in a.group():
+            structureofthisitem = generatepossibleattributesfrom(fr"https://en.wikipedia.org/wiki/{a.group(1)}", distance=distance+1)
+        else:
+            # print(a.group(1))
+            possibleattreibute = PossibleAttribute(web.Wikipedia(fr"https://en.wikipedia.org/wiki/{a.group(1)}"))
+            possibleattreibutes.add(possibleattreibute)
+            structureofthisitem = {}
+            # print(possibleattreibute)
+        searchstructure[a.group()] = structureofthisitem
+    return searchstructure
+
+searchstructure = {}
+startedat = datetime.utcnow()
+step += 1
+links = [
+    "https://en.wikipedia.org/wiki/List_of_culinary_fruits",
+    "https://en.wikipedia.org/wiki/List_of_alcoholic_drinks",
+    # "https://en.wikipedia.org/wiki/Liquor",
+    "https://en.wikipedia.org/wiki/List_of_liqueurs",
+    "https://en.wikipedia.org/wiki/List_of_liqueurs",
+    "https://en.wikipedia.org/wiki/List_of_syrups",
+    "https://en.wikipedia.org/wiki/List_of_culinary_herbs_and_spices",
+]
+for n, link in enumerate(links):
+    searchstructure[link] = generatepossibleattributesfrom(link)
+    with open("structure.json", "w") as f:
+        json.dump(searchstructure, f, indent=4)
+    progress.displayprogressreplacements(n+1, len(links), f"Step {step}/{steps}: Generating possible attributes")
+
+class IngredientMolder:
+    def __init__(self, name):
+        self.attributes = set()  # Used to determine what goes where
+        self.name = self.cleanname(name)
+
+    def __str__(self):
+        return self.name
+
+    def cleanname(self, name):
+        # Is it stupid?
+        googlesearch = web.GoogleSearch(name)
+        if googlesearch.searchinstead:
+            name = googlesearch.searchinstead
+        # Is there an explanation thingy?
+        explainmatch = re.search(r' aria-level="3" role="heading">([^>]*?)<\/div>', googlesearch.html)
+        if explainmatch:
+            name = explainmatch.group(1)
+        # Is there a wikipedia entry for it? Because if so(and its not less detailed), then use that
+        try:
+            wikipedia = web.Wikipedia(name)
+            if wikipedia.brackets:
+                return name
+                self.getattributesfrom(wikipedia.brackets)
+            if len(wikipedia.name) >= len(name) - 2:
+                name = wikipedia.name
+        except web.WebException:
+            pass
+        return name
+
+        # Fix case
+        name = name.strip().title()
+        for x in re.finditer(r"((\b(And|Or|De|'N')\b)|('S\b))", name, flags=re.IGNORECASE):
+            start = x.start(0)
+            end = x.end(0)
+            name = name[:start] + x.group().lower() + name[end:]
+        # Remove accents
+        # name = unidecode(name)
+        # Predefined replacements
+        for f, t in settings.INGREDIENT_RELPACEMENTS:
+            name = re.sub(f, t, name)
+        print(name, self.attributes)
+        return name
+
+    def getattributesfrom(self, fromthis):
+        fromthis = fromthis.lower()
+        for possibleattreibute in possibleattreibutes:
+            if possibleattreibute.appliesto(fromthis):
+                self.attributes.add(possibleattreibute.name)
+
+    def todict(self):
+        return {
+            "strIngredient": self.name,
+            "strAlcohol": False, #self.alcoholic,
+            "strABV": 0, #self.abv,
+            "variantOf": None, #self.variantof,
+            "useCount": 0, #self.usecount,
+            "variants": [],#self.variants,
+            "blocksDownwardMovement": False, #self.blocksdownwardmovement,
+
+            # These fields are just for processing and don't get used in the app, but can be enabled for testing.
+            # "flavored": self.flavored,
+            # "flavors": self.flavors,
+        }
+
+    def potentialattributes(self):
+        """Returns anything that could, structurally, be one of its attributes, but is probably nonsense."""
+        ret = []
+        for x in re.finditer(r"(?=\b(.*?)\b)", f"{self.name}".lower()):
+            ret.append(x.group(1))
+        return ret
+
+# Get all the matches that could lead from an ingredient to an attribute. Then iterate through all the attributes and
+# assign themselves where applicable. This way, the regex only needs to be done once per ingredient,
+# instead of once per ingredient per attribute.
+ingnametoingmol = {}
+attributenametoingredient = {}
+startedat = datetime.utcnow()
+step += 1
+for n, cocktail in enumerate(retcock):
+    for ingredient in cocktail["ingredients"]:
+        name = ingredient["ingredient"]
+        if name not in ingnametoingmol:
+            ingmol = IngredientMolder(name)
+            ingnametoingmol[name] = ingmol
+            reting[ingmol.name] = ingmol
+            for attributename in ingmol.potentialattributes():
+                attributenametoingredient.setdefault(attributename, set())
+                attributenametoingredient[attributename].add(ingmol)
+        ingredient["ingredient"] = ingnametoingmol[name].name
+    progress.displayprogressreplacements(n + 1, len(retcock), f"Step {step}/{steps}: Generating potential attributes but mostly nonsense")
+
+# Convert to dicts
+for k, i in reting.items():
+    reting[k] = i.todict()
+
+# Save
+with open(cockpath, "w") as f:
+    json.dump(retcock, f, indent=4)
+with open(ingpath, "w") as f:
+    json.dump(reting, f, indent=4)
+with open("results/allcocktails.json", "w") as f:
+    json.dump(retcock, f, indent=4)
+with open("results/allingredients.json", "w") as f:
+    json.dump(reting, f, indent=4)
+
+exit()
 # Add ingredient categories
 for categoryname in settings.INGREDIENT_CATEGORIES:
     #for y in ["", "Unflavored "] + [f"{z} " for z in settings.FLAVORS.keys()]:

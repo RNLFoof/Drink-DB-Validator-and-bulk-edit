@@ -1,4 +1,9 @@
+import os
 import re
+
+import requests
+
+HTML_PATH = r"html/"
 
 def strtonum(s):
     s = s.strip()

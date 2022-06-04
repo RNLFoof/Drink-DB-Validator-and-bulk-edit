@@ -18,12 +18,22 @@ INGREDIENT_CATEGORIES = [
     "Genever",
 ]
 
+# These guys are all flavored and need to be blocked off.
+FLAVORED_INGREDIENT_CATEGORIES = [
+    "Syrup",
+    "Juice",
+    "Soda",
+    "Amaro",
+    "Bitters",
+]
+
 # Partial string substitutions.
 INGREDIENT_RELPACEMENTS = [
     # Accents are removed because it's way easier to remove them than to add them back
-    ("à|ä", "a"),
-    ("ç", "c"),
-    ("é|ê|ë|è", "e"),
+    #("à|ä", "a"),
+    #("ç", "c"),
+    #("ñ", "n"),
+    #("é|ê|ë|è", "e"),
     (r"\bCream de\b", "Creme de"),
     (r"\bTrader's Vic\b", "Trader Vic's"),
     (r"ies\b", "y"),
@@ -85,7 +95,7 @@ INGREDIENT_ROUNDUP = [
     ('Angostura', 'Angostura Bitters'),
     ('Benedictine', 'Benedictine Herbal Liqueur'),
     ("Sweet and Sour", 'Sweet and Sour Mix'),
-    ("Chambord", 'Chambord Raspberry Liqueur'),
+    ("Chambord( Liqueur)?", 'Chambord Raspberry Liqueur'),
     ('Cherri-Suissee', 'Cheri-Suisse Swiss Chocolate Cherry Liqueur'),
 ]
 
@@ -133,7 +143,7 @@ ALCOHOLIC_MATCHES = [
 # Used to categorize.
 FLAVORS = {
     "Agave": {},
-    "Almond": {"alsoaccepts": ["Noyeux"]},
+    "Almond": {"alsoaccepts": ["Noyeux","Noyaux"]},
     "Apple": {"alsoaccepts": ["Appel"], "exclude": ["Appleton"]},
     "Apricot": {},
     "Banana": {"alsoaccepts": ["Banane"]},
@@ -150,6 +160,9 @@ FLAVORS = {
     "Elderflower": {},
     "Walnut": {},
     "Caramel": {},
+    "Kumquat": {},
+    "Maraschino": {},
+    "Pomegranate": {"alsoaccepts": ["Grenadine"]},
     "Celery": {},
     "Cherry": {"exclude": ["Cherry Tomato"]},
     "Chocolate": {},
@@ -184,7 +197,7 @@ FLAVORS = {
     "Pear": {},
     "Pepper": {"alsoaccepts": ["Peppar"]},
     "Pickle": {},
-    "Blackcurrant": {"alsoaccepts": ["Black Currant", "Currant"]},
+    "Blackcurrant": {"alsoaccepts": ["Black Currant", "Currant", "Cassis"]},
     "Pineapple": {},
     "Pistachio": {},
     "Cirtus": {},
